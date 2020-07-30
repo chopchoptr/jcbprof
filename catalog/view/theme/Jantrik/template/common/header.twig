@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="{{ direction }}" lang="{{ lang }}" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="{{ direction }}" lang="{{ lang }}">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>JCB</title>
+<base href="{{ base }}" />
+{% if description %}
+<meta name="description" content="{{ description }}" />
+{% endif %}
+{% if keywords %}
+<meta name="keywords" content="{{ keywords }}" />
+{% endif %}
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+<link href="catalog/view/theme/Jantrik/stylesheet/stylesheet.css" rel="stylesheet">
+<!-- place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/icon/favicon.png">
+    <!-- Google Font css -->
+    <link href="https://fonts.googleapis.com/css?family=Lily+Script+One" rel="stylesheet"> 
+
+    <!-- mobile menu css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/meanmenu.min.css">
+    <!-- animate css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/animate.css">
+    <!-- nivo slider css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/nivo-slider.css">
+    <!-- owl carousel css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/owl.carousel.min.css">
+    <!-- slick css -->
+   <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/slick.css">
+    <!-- price slider css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/jquery-ui.min.css">
+    <!-- fontawesome css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/font-awesome.min.css">
+     <!-- fancybox css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/jquery.fancybox.css">     
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/bootstrap.min.css">
+    <!-- default css  -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/default.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/style.css">
+    <!-- responsive css -->
+    <link rel="stylesheet" href="catalog/view/theme/Jantrik/jantrik/css/responsive.css">
+
+    <!-- modernizr js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/vendor/modernizr-2.8.3.min.js"></script>
+{% for style in styles %}
+<link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
+{% endfor %}
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+{% for link in links %}
+<link href="{{ link.href }}" rel="{{ link.rel }}" />
+{% endfor %}
+{% for analytic in analytics %}
+{{ analytic }}
+{% endfor %}
+</head>
+<body>
+<!-- СКОРЕЕ ВСЕГО МОЖНО УДАЛИТЬ
+<nav id="top">
+  <div class="container">{{ currency }}
+    {{ language }}
+    <div id="top-links" class="nav pull-right">
+      <ul class="list-inline">
+        <li><a href="{{ contact }}"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">{{ telephone }}</span></li>
+        <li class="dropdown"><a href="{{ account }}" title="{{ text_account }}" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_account }}</span> <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+            {% if logged %}
+            <li><a href="{{ account }}">{{ text_account }}</a></li>
+            <li><a href="{{ order }}">{{ text_order }}</a></li>
+            <li><a href="{{ transaction }}">{{ text_transaction }}</a></li>
+            <li><a href="{{ download }}">{{ text_download }}</a></li>
+            <li><a href="{{ logout }}">{{ text_logout }}</a></li>
+            {% else %}
+            <li><a href="{{ register }}">{{ text_register }}</a></li>
+            <li><a href="{{ login }}">{{ text_login }}</a></li>
+            {% endif %}
+          </ul>
+        </li>
+        <li><a href="{{ wishlist }}" id="wishlist-total" title="{{ text_wishlist }}"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_wishlist }}</span></a></li>
+        <li><a href="{{ shopping_cart }}" title="{{ text_shopping_cart }}"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_shopping_cart }}</span></a></li>
+        <li><a href="{{ checkout }}" title="{{ text_checkout }}"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md">{{ text_checkout }}</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>-->
+<header>
+            <!-- Header Top Start -->
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <!-- Header Top left Start -->                        
+                        <div class="col-lg-4 col-md-12 d-center">
+                            <div class="header-top-left">
+                                <img src="catalog/view/theme/Jantrik/jantrik/img/icon/call.png" alt="">+7 (999) 999-99-99
+                            </div>                        
+                        </div>
+                        <!-- Header Top left End -->
+                        <!-- Search Box Start -->                                        
+                        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                            <div class="search-box-view">
+                                <form action="#">
+                                    <input type="text" class="email" placeholder="Поиск" name="product">
+                                    <button type="submit" class="submit"></button>
+                                </form>
+                            </div>                                           
+                        </div>
+                        <!-- Search Box End --> 
+                        <!-- Header Top Right Start -->                                       
+                        <div class="col-lg-4 col-md-12 header-top-right">
+                            <div class="header-top-right-dop">
+                                Дмитровское шоссе д. 50 к. 1 ( с 9.30 до 19.00)
+                            </div>
+                        </div>
+                        <!-- Header Top Right End -->
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Header Top End -->
+            
+        </header>
+{{ menu }}
+
+<!-- Wrapper End -->
+    <!-- jquery 3.12.4 -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/vendor/jquery-1.12.4.min.js"></script>
+    <!-- mobile menu js  -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/jquery.meanmenu.min.js"></script>
+    <!-- scroll-up js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/jquery.scrollUp.js"></script>
+    <!-- owl-carousel js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/owl.carousel.min.js"></script>
+    <!-- slick js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/slick.min.js"></script>
+    <!-- wow js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/wow.min.js"></script>
+    <!-- price slider js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/jquery-ui.min.js"></script>
+    <script src="catalog/view/theme/Jantrik/jantrik/js/jquery.countdown.min.js"></script>
+    <!-- nivo slider js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/jquery.nivo.slider.js"></script>
+    <!-- fancybox js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/jquery.fancybox.min.js"></script>
+    <!-- bootstrap -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/bootstrap.min.js"></script>
+    <!-- popper -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/popper.js"></script>
+    <!-- plugins -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/plugins.js"></script>
+    <!-- main js -->
+    <script src="catalog/view/theme/Jantrik/jantrik/js/main.js"></script>
+    

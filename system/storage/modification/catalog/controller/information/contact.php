@@ -161,6 +161,7 @@ class ControllerInformationContact extends Controller {
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
+$data['hyper_positions_top_content'] = $this->load->controller('extension/designs/hyper_positions_top_content');
 		$data['content_top'] = $this->load->controller('common/content_top');
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
@@ -227,6 +228,7 @@ class ControllerInformationContact extends Controller {
 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
+$data['hyper_positions_top_content'] = $this->load->controller('extension/designs/hyper_positions_top_content');
 		$data['content_top'] = $this->load->controller('common/content_top');
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');

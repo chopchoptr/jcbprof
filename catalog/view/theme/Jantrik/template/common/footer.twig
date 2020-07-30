@@ -1,0 +1,108 @@
+<footer class="off-white-bg">
+  <!--<div class="container">
+    <div class="row">
+      {% if informations %}
+      <div class="col-sm-3">
+        <h5>{{ text_information }}</h5>
+        <ul class="list-unstyled">
+         {% for information in informations %}
+          <li><a href="{{ information.href }}">{{ information.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+      <div class="col-sm-3">
+        <h5>{{ text_service }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ contact }}">{{ text_contact }}</a></li>
+          <li><a href="{{ return }}">{{ text_return }}</a></li>
+          <li><a href="{{ sitemap }}">{{ text_sitemap }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>{{ text_extra }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ manufacturer }}">{{ text_manufacturer }}</a></li>
+          <li><a href="{{ voucher }}">{{ text_voucher }}</a></li>
+          <li><a href="{{ affiliate }}">{{ text_affiliate }}</a></li>
+          <li><a href="{{ special }}">{{ text_special }}</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>{{ text_account }}</h5>
+        <ul class="list-unstyled">
+          <li><a href="{{ account }}">{{ text_account }}</a></li>
+          <li><a href="{{ order }}">{{ text_order }}</a></li>
+          <li><a href="{{ wishlist }}">{{ text_wishlist }}</a></li>
+          <li><a href="{{ newsletter }}">{{ text_newsletter }}</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p>{{ powered }}</p>
+  </div>-->
+            <!-- Footer Top Start -->
+            <div class="footer-top pt-50 pb-60">
+                <div class="container">                  
+                    <div class="row">
+                        <!-- Single Footer Start -->
+                        <div class="col-sm-4">
+                            <div class="single-footer">
+                                <h3>Связь</h3>
+                                <div class="footer-content">
+                                    <div class="loc-address">
+                                        <span><i class="fa fa-map-marker"></i>г. Москва, Дмитровское шоссе д 50, корпус 1</span>
+                                        <span><i class="fa fa-envelope-o"></i>Почта : pochta@mail.ru</span>
+                                        <span><i class="fa fa-phone"></i>Номер: + 7 (999) 999-99-99</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Single Footer Start -->
+                        <!-- Single Footer Start -->
+                        <div class="col-sm-4">
+                            <div class="single-footer pl20">
+                                <h3 class="footer-title">Информация</h3>
+                                <div class="footer-content">
+                                    <ul class="footer-list">
+                                        <li><a href="#">Карта сайта</a></li>
+                                        <li><a href="#">Предложения</a></li>
+                                        <li><a href="#">Работа</a></li>
+                                        <li><a href="#">Доставка</a></li>
+                                        <li><a href="#">Покупки</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="single-footer">
+                                <h3 class="footer-title">Мы в социальных сетях</h3>
+                                <div class="footer-content">
+                                    <ul class="footer-list">
+                                        <li><a href="#"><i class="fa fa-vk"></i> ВКонтакте</a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"> Instagram</i></a></li>
+                                        <li><a href="#"><i class="fa fa-whatsapp"></i> WhatsApp</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Footer Top End -->
+        <!-- Footer End -->
+</footer>
+{% for script in scripts %}
+<script src="{{ script }}" type="text/javascript"></script>
+{% endfor %}
+<!--
+Разработчики: 
+1) Мухаммад Жагипаров Комектесович
+2) Андрей Гречихин 
+3) Олег Ивонин
+//-->
+</body></html>
