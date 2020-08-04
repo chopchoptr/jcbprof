@@ -1,17 +1,24 @@
 body {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Impact', sans-serif;
 	font-weight: 400;
 	color: #666;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 20px;
 	width: 100%;
+	letter-spacing: 2px;
+	overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
 	color: #444;
 }
 /* default font size */
-.fa {
+footer .fa {
 	font-size: 14px;
+	color: white;
+}
+header .fa{
+	font-size: 14px;
+	color: black;
 }
 /* Override the bootstrap defaults */
 h1 {
@@ -318,19 +325,19 @@ div.required .control-label:before {
 footer {
 	margin-top: 30px;
 	padding-top: 30px;
-	background-color: #303030;
+	background: black !important;
 	border-top: 1px solid #ddd;
-	color: #e2e2e2;
+	color: white;
 }
 footer hr {
 	border-top: none;
 	border-bottom: 1px solid #666;
 }
 footer a {
-	color: black;
+	color: white;
 }
 footer a:hover {
-	color: #fff;
+	color: #FCB026;
 }
 footer h5 {
 	font-family: 'Open Sans', sans-serif;
@@ -553,15 +560,19 @@ footer h5 {
 	padding: 0 15px;
 }
 }
+/* Цвет шрифта рекомендуемые */
 .product-thumb h4 {
 	font-weight: bold;
+	color: black;
 }
 .product-thumb .caption {
 	padding: 0 20px;
 	min-height: 180px;
+	color: black;
 }
 .product-list .product-thumb .caption {
 	margin-left: 230px;
+	
 }
 @media (max-width: 1200px) {
 .product-grid .product-thumb .caption {
@@ -599,8 +610,9 @@ footer h5 {
 h2.price {
 	margin: 0;
 }
+/* Цвет цены рекомендуемые */
 .product-thumb .price {
-	color: #444;
+	color: black;
 }
 .product-thumb .price-new {
 	font-weight: 600;
@@ -628,27 +640,44 @@ h2.price {
 		border-left: none;
 	}
 }
+/* Цвет кнопок рекомендуемые */
 .product-thumb .button-group button {
-	width: 60%;
+	width: 50%;
 	border: none;
-	display: inline-block;
+	display: block;
 	float: left;
-	background-color: #eee;
-	color: #888;
+	background-color: #FCB026;
+	color: white;
 	line-height: 38px;
-	font-weight: bold;
 	text-align: center;
 	text-transform: uppercase;
 }
-.product-thumb .button-group button + button {
-	width: 20%;
-	border-left: 1px solid #ddd;
+.buttonShopB{
+	width: 100%;
+	border-top: 1px solid white;
+	display: block;
+	float: left;
+	background-color: #FCB026;
+	color: white;
+	line-height: 38px;
+	text-align: center;
+	text-transform: uppercase;
 }
 .product-thumb .button-group button:hover {
-	color: #444;
-	background-color: #ddd;
+	color: #FCB026;
+	background-color: black;
 	text-decoration: none;
 	cursor: pointer;
+}
+.buttonShopB:hover{
+	color: #FCB026;
+	background-color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+.buttonK:hover {
+	background-color: #FCB026 !important;
+	color: white !important;
 }
 @media (max-width: 1200px) {
 	.product-thumb .button-group button, .product-thumb .button-group button + button {
@@ -751,14 +780,18 @@ h2.price {
 }
 
 .swiper-viewport{
-	margin: 0 auto !important;
+	/* margin: 0 auto !important; */
 	border: none !important;
+	margin-top: 100px;
 }
 
-.img-responsive{
-	width: 100%;
+.img-100{
 }
 
 .pos-slider{
 	border-top: none !important;
+}
+
+.mt30{
+	margin-top: 30px;
 }
