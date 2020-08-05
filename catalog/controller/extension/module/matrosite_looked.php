@@ -7,7 +7,7 @@ class ControllerExtensionModuleMatrositeLooked extends Controller {
 		$this->load->language('extension/module/matrosite/looked');
 		$this->load->model('catalog/product');
 		$this->load->model('tool/image');
-		
+
 		
 		$setting = $this->model_setting_setting->getSetting('module_matrosite_looked');
 		

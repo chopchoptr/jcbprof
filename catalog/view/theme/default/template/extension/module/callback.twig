@@ -1,0 +1,21 @@
+    <!-- Выводим соответствующий текст, если модуль включен или выключен -->
+    {% if module_callback_status %}
+    <h1>{{ text_test }}</h1>
+    <form method = "POST">
+    <input type = "hidden" name = "product_id" value = "{{product_id}}">
+    <div class = "row">
+        <div class = "col-sm-4">
+            <label>Имя*<input type = "text"  placeholder = "Иван" name = "consumer_name"></label>
+            <label>Почта<input type="email" placeholder = "email@example.com" name = "consumer_mail"></label>
+        </div>
+        <div class = "col-sm-4">
+            <label>Номер телефона*<input type = "tel" placeholder = "8 999 123 45 67" name = "consumer_tel"></label>
+            <label>Vin-номер авто<input placeholder = "JHLRE48577C415490" name = "consumer_vin"></label>
+        </div>
+        <div class = "col-sm-12">
+            <textarea placeholder = "Опишите подробнее ваш вопрос" name = "consumer_text"></textarea>
+            <input type = "submit" placeholder = "Кнопка отправки формы и обновления БД">
+        </div>
+    </div>
+    </form>
+    {% endif %}
