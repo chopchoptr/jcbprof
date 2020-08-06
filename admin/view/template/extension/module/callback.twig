@@ -2,11 +2,6 @@
 <div id="content">
   <div class="page-header">
     <div class="container-fluid">
-      <!-- Кнопки управления -->
-      <div class="pull-right">
-        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
-        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
-      </div>
       <!-- Название модуля -->
       <h1>{{ heading_title }}</h1>
       <!-- Хлебные крошки -->
@@ -23,24 +18,51 @@
         <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
       </div>
       <div class="panel-body">
-        <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-module" class="form-horizontal">
-          <!-- Настройка: "Статус" -->
-          <div class="form-group">
-            <label class="col-sm-2 control-label" for="input-status">{{ entry_status }}</label>
-            <div class="col-sm-10">
- 
-              <select name="module_callback_status" id="input-status" class="form-control">
-                {% if module_callback_status %}
-                <option value="1" selected="selected">{{ text_enabled }}</option>
-                <option value="0">{{ text_disabled }}</option>
-                {% else %}
-                <option value="1">{{ text_enabled }}</option>
-                <option value="0" selected="selected">{{ text_disabled }}</option>
-                {% endif %}
+        <table border = "1" width = "100%">
+          <tr>
+            <th>№</th>
+            <th>Личные данные</th>
+            <th>Вопрос</th>
+            <th>Заметка</th>
+            <th>Статус заявки</th>
+            <th>Действие</th>
+          </tr>
+          {% for row in rows %}
+          <tr style = "border-top:2px solid black;">
+          <form method = "POST">
+            <input type="hidden" name="id" value = "{{row.id}}">
+            <td>{{row.id}}</td>
+            <td>
+              Имя: {{row.name}}<br>
+              Телефон: {{row.phone}}<br>
+              Vin: <input name = "vin" style = "width:80%;" value="{{row.vin}}" placeholder = "vin-номер"><br>
+              Почта: <input name = "email" style = "width:80%;" value="{{row.mail}}" placeholder = "Почтовый ящик"><br>
+              <a target="_blank" href="/index.php?route=product/product&product_id={{row.product_id}}">ТОВАР</a>
+            </td>
+            <td>
+              <textarea name = "question" style = "width:100%; height:150px; overflow-y:scroll;">{{row.quest}}</textarea>
+            </td>
+            <td>
+              <textarea name = "notes" style = "width:100%; height:150px; overflow-y:scroll;">{{row.notes}}</textarea>
+            </td>
+            <td>
+              Последнее изменение:
+              <h4>{{row.date}}</h4>
+              <select name = "status">
+                <option {% if row.status == 1 %}selected {% endif %} value = "1">Открыта</option>
+                <option {% if row.status == 2 %}selected {% endif %} value = "2">В обработке</option>
+                <option {% if row.status == 3 %}selected {% endif %} value = "3">Завершена</option>
+                <option {% if row.status == 4 %}selected {% endif %} value = "4">Отклонена</option> 
               </select>
-            </div>
-          </div>
-        </form>
+            </td>
+            <td>
+              <button name = "action" value = "write">Записать</button><br>
+              <button name = "action" value = "del">Удалить</button>
+            </td>
+          </form>
+          </tr>
+          {% endfor %}
+        </table>
       </div>
     </div>
   </div>

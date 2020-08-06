@@ -6,12 +6,12 @@ class ControllerExtensionModuleCallback extends Controller
         $this->load->model('extension/module/callback');
         if ($this->request->server["REQUEST_METHOD"]=='POST')
         {
-            $this->model_extension_module_callback->SaveSettings();
+            $this->model_extension_module_callback->ChangeData();
             $this->session->data['success'] = "Настройки сохранены";
-            $this->response->redirect( $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module', true));
+            $this->response->redirect( $this->url->link('extension/module/callback', 'user_token=' . $this->session->data['user_token']));
         }
         $data = array();
-        $data["module_callback_status"] = $this->model_extension_module_callback->LoadSettings();
+        $data['rows'] = $this->model_extension_module_callback->GetData();        
         $data += $this->load->language("extension/module/callback");
         $data += $this->GetBreadCrumbs();
         $data['action'] = $this->url->link('extension/module/callback', 'user_token='.$this->session->data['user_token'], true);

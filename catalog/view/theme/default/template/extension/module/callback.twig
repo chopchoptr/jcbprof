@@ -1,5 +1,9 @@
-    <!-- Выводим соответствующий текст, если модуль включен или выключен -->
-    {% if module_callback_status %}
+    {% if ticket%}
+    <div style = "width:320px; height:240px; position:fixed; right:40%; top:30%; background:#fff; z-index:999999; border: 1px solid #000">
+    <h2> Номер вашей заявки: {{ticket}} </h2>
+    <a href="{{url}}?{%if route%}route={{route}}&{%endif%}{%if product_id%}product_id={{product_id}}{%endif%}"><button>OK</button></a>
+    </div>
+    {%endif%}
     <h1>{{ text_test }}</h1>
     <form method = "POST">
     <input type = "hidden" name = "product_id" value = "{{product_id}}">
@@ -14,8 +18,7 @@
         </div>
         <div class = "col-sm-12">
             <textarea placeholder = "Опишите подробнее ваш вопрос" name = "consumer_text"></textarea>
-            <input type = "submit" placeholder = "Кнопка отправки формы и обновления БД">
+            <button name = "action" value = "send_callback" >Кнопка отправки формы и обновления БД</button>
         </div>
     </div>
     </form>
-    {% endif %}
