@@ -1,9 +1,8 @@
 {% if categories %}
 <!-- Header Bottom Start -->
             <div class="header-bottom header-sticky">
-                <div class="container">
                     <div class="row">
-                    <div class="col-xl-3 col-lg-2 col-sm-5 col-5 d-center">
+                    <div class="col-sm-2 d-center">
                             <div class="header-top-left">
                                <i class="fa fa-phone-square"></i> +7 (999) 999-99-99
                             </div>                        
@@ -11,20 +10,13 @@
                         
                         <!-- Primary Vertical-Menu End -->
                         <!-- Search Box Start -->
-                        <div class="col-xl-6 col-lg-7 d-none d-lg-block">
-                            <div class="middle-menu pull-right">
+                        <div class="col-sm-8">
+                            <div class="middle-menu text-center">
                                 <nav>
                                     <ul class="middle-menu-list">
-                                        <li><a href="index.html">Главная<i class="fa fa-angle-down"></i></a>
-                                            <!-- Home Version Dropdown Start -->
-                                            <ul class="ht-dropdown home-dropdown">
-                                                <li><a href="index.html">Вариант №1</a></li>
-                                                <li><a href="index-2.html">Вариант №2</a></li>
-                                            </ul>
-                                            <!-- Home Version Dropdown End -->
-                                        </li>
-                                        <li><a href="#">О нас</a></li>                                        
-                                        <li><a href="#">Категории<i class="fa fa-angle-down"></i></a>
+                                        <li><a href="{{ home }}" class="menu__item">Главная</a></li>
+                                        <li><a href="#" class="menu__item">О нас</a></li>                                        
+                                        <li><a href="#" class="menu__item">Категории<i class="fa fa-angle-down"></i></a>
                                             <!-- Home Version Dropdown Start -->
                                             <ul class="ht-dropdown dropdown-style-two">
                                                 <li><a href="#">Подкатегория</a>
@@ -44,7 +36,7 @@
                                             </ul>
                                             <!-- Home Version Dropdown End -->
                                         </li>                                        
-                                        <li><a href="#">Блог<i class="fa fa-angle-down"></i></a>
+                                        <li><a href="#" class="menu__item">Блог<i class="fa fa-angle-down"></i></a>
                                             <!-- Home Version Dropdown Start -->
                                             <ul class="ht-dropdown dropdown-style-two">
                                                 <li><a href="#">Блог 1</a></li>
@@ -52,14 +44,14 @@
                                             </ul>
                                             <!-- Home Version Dropdown End -->
                                         </li>
-                                        <li><a href="#">Связаться с нами</a></li>                                        
+                                        <li><a href="#" class="menu__item">Связаться с нами</a></li>                                        
                                     </ul>
                                 </nav>
                             </div>
                         </div>
                         <!-- Search Box End -->
                         <!-- Cartt Box Start -->
-                        <div class="col-lg-3 col-sm-7 col-7">
+                        <div class="col-sm-2 d-center">
                             <div class="cart-box text-right">
                                 <ul>
                                     <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
@@ -150,7 +142,6 @@
                         <!-- Mobile Menu  End -->                        
                     </div>
                     <!-- Row End -->
-                </div>
                 <!-- Container End -->
             </div>
             <!-- Header Bottom End -->

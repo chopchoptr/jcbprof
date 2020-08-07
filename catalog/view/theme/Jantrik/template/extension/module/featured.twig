@@ -21,7 +21,7 @@
         {% endif %}
       </div>
       <div class="button-group">
-        <button class="buttonK" type="button">{{ product.price }}</button>
+        <button class="buttonK" type="button">Цена: {{ product.price }}</button>
         <button type="button" onclick="cart.add('{{ product.product_id }}');"><span class="hidden-xs hidden-sm hidden-md">{{ button_cart }}</span></button>
         <a href="{{ product.href }}"><div class="buttonShopB">Подробнее</div></a>
       </div>
