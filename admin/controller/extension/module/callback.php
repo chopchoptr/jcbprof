@@ -1,6 +1,26 @@
 <?php
 class ControllerExtensionModuleCallback extends Controller 
 {
+    public function install()
+    {
+        $this->load->model('extension/module/callback');
+        $this->model_extension_module_callback->initTable();
+        $post['module_callback_status'] = 1;
+        $this->load->model('setting/setting');
+        $this->model_setting_setting->editSetting('module_callback', $post);
+        $this->response->redirect( $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module', true));
+    }
+
+    public function uninstall()
+    {
+        $this->load->model('extension/module/callback');
+        $this->model_extension_module_callback->dropTable();
+        $post['module_callback_status'] = 0;
+        $this->load->model('setting/setting');
+        $this->model_setting_setting->editSetting('module_callback', $post);
+        $this->response->redirect( $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module', true));
+    }
+
     public function index ()
     {
         $this->load->model('extension/module/callback');
@@ -19,7 +39,6 @@ class ControllerExtensionModuleCallback extends Controller
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
-        //output data in view
         $this->response->setOutput($this->load->view('extension/module/callback', $data));
     }
 
