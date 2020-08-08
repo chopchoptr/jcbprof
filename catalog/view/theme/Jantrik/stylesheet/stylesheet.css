@@ -1,11 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
 body {
-	font-family: 'Impact', sans-serif;
+	font-family: 'Montserrat', sans-serif!important;
 	font-weight: 400;
 	color: #666;
 	font-size: 14px;
 	line-height: 20px;
 	width: 100%;
-	letter-spacing: 2px;
 	overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 {
@@ -529,10 +530,22 @@ footer h5 {
 	font-family: FontAwesome;
 }
 /* product list */
+.image{
+    pointer-events: none;
+}
+.caption{
+    pointer-events: none;
+}
 .product-thumb {
-	border: 1px solid #ddd;
 	margin-bottom: 20px;
 	overflow: auto;
+}
+.product-thumb:hover{
+    border: 1px solid black;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    background: white;
 }
 .product-thumb .image {
 	text-align: center;
@@ -619,12 +632,8 @@ h2.price {
 	display: block;
 }
 .product-thumb .button-group {
-	border-top: 1px solid #ddd;
 	background-color: #eee;
-	overflow: auto;
-}
-.product-list .product-thumb .button-group {
-	border-left: 1px solid #ddd;
+    overflow: auto;
 }
 @media (max-width: 768px) {
 	.product-list .product-thumb .button-group {
@@ -637,20 +646,17 @@ h2.price {
 	border: none;
 	display: block;
 	float: left;
-	background-color: #FCB026;
+	background-color: black;
 	color: white;
 	line-height: 38px;
 	text-align: center;
     text-transform: uppercase;
-    border: 1px solid black;
     font-weight: 600!important;
-    letter-spacing: 2px;
+    border-bottom: 1px solid black!important;
+    border-top: 1px solid black!important;
 }
 .buttonShopB{
 	width: 100%;
-    border-bottom: 1px solid black;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
 	display: block;
 	float: left;
 	background-color: #FCB026;
@@ -661,24 +667,30 @@ h2.price {
     font-weight: 600!important;
     
 }
-.product-thumb .button-group button:hover {
+.button-group button:hover {
 	color: black;
 	background-color: white;
 	text-decoration: none;
 	cursor: pointer;
 }
 .buttonShopB:hover{
+    border: none!important;
 	color: black;
 	background-color: white;
 	text-decoration: none;
 	cursor: pointer;
 }
 .buttonK{
-    border-right: none!important;
+    background: white!important;
+    color: black!important;
+    border-bottom: 1px solid black!important;
+    border-top: 1px solid black!important;
 }
 .buttonK:hover {
-	background-color: #FCB026 !important;
-	color: white !important;
+	background: white!important;
+    color: black!important;
+    border-bottom: 1px solid black!important;
+    border-top: 1px solid black!important;
 }
 
 @media (max-width: 767px) {
@@ -732,6 +744,9 @@ h2.price {
 		clear:left;
 	}
 }
+.product-layout{
+    
+}
 
 /* fixed colum left + content + right*/
 @media (min-width: 768px) {
@@ -751,12 +766,10 @@ h2.price {
        width: 100%;
     }
 }
-
 /* fixed product layouts used in left and right columns */
 #column-left .product-layout, #column-right .product-layout {
 	width: 100%;
 }
-
 /* fixed mobile cart quantity input */
 .input-group .form-control[name^=quantity] {
 	min-width: 50px;
