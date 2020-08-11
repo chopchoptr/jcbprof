@@ -7,19 +7,19 @@ class ControllerExtensionModuleCallback extends Controller
         if ($this->request->server["REQUEST_METHOD"]=='POST')
         {
            $num = $this->model_extension_module_callback->RecordData();
-            if ($_GET && $_GET['product_id'])
+            if ($_GET && isset($_GET['product_id']))
             $str = "product_id=".$_GET['product_id'];
             else
             $str = "";
             if ($num['id'] > 0)
                 $str.="&ticket=".$num['id'];
-            $route = isset($_GET['route']) ? $_GET['route'] : "";
+                $route = isset($_GET['route']) ? $_GET['route'] : "common/home";
         $this->response->redirect( $this->url->link($route, $str, true));
         }
         $data = array();
         if (isset($_GET))
         {
-            $route = isset($_GET['route']) ? $_GET['route'] : "";
+            $route = isset($_GET['route']) ? $_GET['route'] : NULL;
             if ($route == "product/product")
                 $data['product_id'] = $_GET['product_id'];
             $ticket = isset($_GET['ticket']) ? $_GET['ticket'] : "";
