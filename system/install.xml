@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<modification>
+  <name>Callback</name>                <!-- Название модификатора -->
+  <code>callback</code>                <!-- Уникальный код модификатора -->
+  <version>1.0</version>           <!-- Версия -->
+  <author>Waeron-g</author>            <!-- Автор -->
+  <link></link>  <!-- Сайт разработчика -->
+ 
+<file path="admin/controller/common/column_left.php">  <!-- Какой файл будет модифицироваться -->
+  <operation>
+    <search index="0" trim="true">                           <!-- Найти код в файле -->
+	<![CDATA[$customer = array();]]>
+    </search>
+    <add position="after">             <!-- Добавление модификации (после найденного кода) -->
+	<![CDATA[
+			if ($this->user->hasPermission('access', 'extension/module/callback')) {
+				$customer[] = array(
+					'name'	   => $this->language->get('text_callback'),
+					'href'     => $this->url->link('extension/module/callback', 'user_token=' . $this->session->data['user_token'], true),
+					'children' => array()		
+				);
+			}]]>
+    </add>
+  </operation>
+</file>
+ 
+</modification>

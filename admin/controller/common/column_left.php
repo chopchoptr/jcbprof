@@ -51,13 +51,6 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 
-			// if ($this->user->hasPermission('access', 'extension/module/callback')) {
-				$catalog[] = array(
-					'name'	   => $this->language->get('text_callback'),
-					'href'     => $this->url->link('extension/module/callback', 'user_token=' . $this->session->data['user_token'], true),
-					'children' => array()		
-				);
-			// }
 			
 			// Attributes
 			$attribute = array();
