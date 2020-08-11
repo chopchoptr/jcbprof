@@ -139,19 +139,19 @@ div.required .control-label:before {
 	margin-top: -5px;
 }
 /* search */
-#search {
-	margin-bottom: 10px;
+
+#search{
 }
+
 #search .input-lg {
 	height: 40px;
 	line-height: 20px;
 	padding: 0 10px;
 }
 #search .btn-lg {
+    height: 40px;
 	font-size: 15px;
 	line-height: 18px;
-	padding: 10px 35px;
-	text-shadow: 0 1px 0 #FFF;
 }
 /* cart */
 #cart {
@@ -417,12 +417,12 @@ footer h5 {
 	font-size: 15px;
 }
 .btn-default {
-	color: #777;
-	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
-	background-color: #e7e7e7;
-	background-image: linear-gradient(to bottom, #eeeeee, #dddddd);
-	background-repeat: repeat-x;
-	border-color: #dddddd #dddddd #b3b3b3 #b7b7b7;
+    color: black;
+    background: #FCB026;
+}
+.btn-default:hover{
+    color: #FCB026;
+    background: white;
 }
 .btn-primary {
 	color: #ffffff;
@@ -546,6 +546,8 @@ footer h5 {
     -ms-transform: scale(1.2);
     transform: scale(1.2);
     background: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    padding: 10px;
 }
 .product-thumb .image {
 	text-align: center;
