@@ -1,0 +1,25 @@
+    {% if ticket%}
+    <div style = "width:320px; height:240px; position:fixed; right:40%; top:30%; background:#fff; z-index:999999; border: 1px solid #000">
+    <h2> Номер вашей заявки: {{ticket}} </h2>
+    <a href="{{url}}?{%if route%}route={{route}}&{%endif%}{%if product_id%}product_id={{product_id}}{%endif%}"><button>OK</button></a>
+    </div>
+    {%endif%}
+    <div class="callbackform">
+    <h1>{{ text_test }}</h1>
+    <form method = "POST">
+    <input type = "hidden" name = "product_id" value = "{{product_id}}">
+
+            <label>Имя*<input type = "text"  placeholder = "Иван" name = "consumer_name"></label>
+            <label>Почта<input type="email" placeholder = "email@example.com" name = "consumer_mail"></label>
+
+
+            <label>Номер телефона*<input type = "tel" placeholder = "8 999 123 45 67" name = "consumer_tel"></label>
+            <label>Vin-номер авто<input placeholder = "JHLRE48577C415490" name = "consumer_vin"></label>
+
+
+            <textarea placeholder = "Опишите подробнее ваш вопрос" name = "consumer_text"></textarea>
+            <button name = "action" value = "send_callback" >Кнопка отправки формы и обновления БД</button>
+
+    </div>
+    </form>
+    </div>

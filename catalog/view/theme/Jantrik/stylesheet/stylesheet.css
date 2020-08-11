@@ -541,13 +541,9 @@ footer h5 {
 	overflow: auto;
 }
 .product-thumb:hover{
-    border: 1px solid black;
-    -webkit-transform: scale(1.2);
-    -ms-transform: scale(1.2);
-    transform: scale(1.2);
+    border: 1px solid rgba(241, 238, 238, 0.863);
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
-    padding: 10px;
 }
 .product-thumb .image {
 	text-align: center;
@@ -747,7 +743,7 @@ h2.price {
 	}
 }
 .product-layout{
-    
+    max-height: 500px;
 }
 
 /* fixed colum left + content + right*/
@@ -4823,7 +4819,20 @@ legend {
 .swiper-viewport{
 	/* margin: 0 auto !important; */
 	border: none !important;
-	margin-top: 100px;
+    margin-top: 100px;
+}
+
+.callbackform{
+    position: relative;
+    z-index: 1;
+    top: -500px;
+    left: -200px;
+    background: white;
+    border: 1px solid black;
+    height: 400px;
+    max-width: 400px;
+    background: #FCB026;
+    color: black;
 }
 
 .pos-slider{
