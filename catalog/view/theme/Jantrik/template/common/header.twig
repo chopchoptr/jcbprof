@@ -98,27 +98,69 @@
     </div>
   </div>
 </nav>-->
+{{ menu }}
 <header>
             <!-- Header Top Start -->
             <div class="header-top">
-                        <!-- Header Top left Start -->                        
+                        <!-- Header Top left Start -->
                         <div class="col-sm-4">
-                            <div class="logo">
-                                <a href="{{ home }}"><img src="catalog/view/theme/Jantrik/jantrik/img/logo/logo.png" alt="logo-image"></a>
+                            <div class="header-top-right-dop">
+                                Дмитровское шоссе д. 50 к. 1 ( с 9.30 до 19.00)
                             </div>
-                        </div>
+                        </div>                        
+                        
                         <!-- Header Top left End -->
                         <!-- Search Box Start -->                                        
                         <div class="col-sm-4">
                             {{search}}                                         
                         </div>
                         <!-- Search Box End --> 
-                        <!-- Header Top Right Start -->                                       
-                        <div class="col-sm-4 d-center">
-                            <div class="header-top-right-dop">
-                                Дмитровское шоссе д. 50 к. 1 ( с 9.30 до 19.00)
+                        <!-- Header Top Right Start -->
+                        <div class="col-sm-4">
+                            <div class="cart-box text-right">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                                        <ul class="ht-dropdown main-cart-box">
+                                            <li>
+                                                <!-- Cart Box Start -->
+                                                <div class="single-cart-box">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="img/menu/1.jpg" alt="cart-image"></a>
+                                                    </div>
+                                                    <div class="cart-content">
+                                                        <h6><a href="#">Товар 1</a></h6>
+                                                        <span>9999 руб</span>
+                                                    </div>
+                                                    <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                                </div>
+                                                <!-- Cart Box End -->
+                                                <!-- Cart Box Start -->
+                                                <div class="single-cart-box">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="img/menu/2.jpg" alt="cart-image"></a>
+                                                    </div>
+                                                    <div class="cart-content">
+                                                        <h6><a href="#">Товар 2</a></h6>
+                                                        <span>9999</span>
+                                                    </div>
+                                                    <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                                </div>
+                                                <!-- Cart Box End -->
+                                                <!-- Cart Footer Inner Start -->
+                                                <div class="cart-footer fix">
+                                                    <h5>Итого :<span class="f-right">9999</span></h5>
+                                                    <div class="cart-actions">
+                                                        <a class="checkout" href="#">Купить</a>
+                                                    </div>
+                                                </div>
+                                                <!-- Cart Footer Inner End -->
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
+                        </div>                                       
+                        
                         <!-- Header Top Right End -->
                     </div>
                 </div>
@@ -127,7 +169,7 @@
             <!-- Header Top End -->
             
         </header>
-{{ menu }}
+
 
 <!-- Wrapper End -->
     <!-- mobile menu js  -->

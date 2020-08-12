@@ -3,10 +3,6 @@
 /*----------------------------------------*/
 
 @media (min-width: 992px) and (max-width: 1200px) {
-
-.middle-menu-list > li > a {
-    padding: 37px 0 37px 15px;
-}
 .header-list-menu > li > a, .homeo-2 .ht-dropdown.megamenu li a {
     padding: 10px 25px 10px 3px;
 }
