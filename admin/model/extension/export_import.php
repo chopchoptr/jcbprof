@@ -6101,7 +6101,7 @@ class ModelToolExportImport extends Model {
 			$cwd = getcwd();
 			$dir = version_compare(VERSION,'3.0','>=') ? 'library/export_import' : 'PHPExcel';
 			chdir( DIR_SYSTEM.$dir );
-			require_once( 'Classes/PHPExcel.php' );
+			require_once( '/system/library/export_import/Classes/PHPExcel.php' );
 			chdir( $cwd );
 			
 			// Memory Optimization
