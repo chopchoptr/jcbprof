@@ -34,7 +34,7 @@ class ModelExtensionModuleCallback extends Model
     public function initTable()
     {
         $this->db->query("CREATE TABLE IF NOT EXISTS `oc_callback` (
-            `id` int(11) NOT NULL AUTO_INCREMENT,
+            `id` int(11) NOT NULL primary key AUTO_INCREMENT ,
             `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
             `phone` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
             `mail` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,

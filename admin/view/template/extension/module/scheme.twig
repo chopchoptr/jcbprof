@@ -1,0 +1,70 @@
+{{ header }}{{ column_left }}
+<div id="content">
+  <div class="page-header">
+    <div class="container-fluid">
+      <!-- Название модуля -->
+      <h1>{{ heading_title }}</h1>
+      <!-- Хлебные крошки -->
+      <ul class="breadcrumb">
+        {% for breadcrumb in breadcrumbs %}
+        <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+      </div>
+      <div class="panel-body">
+        <table border = "1" width = "100%">
+          <tr>
+            <th>№</th>
+            <th>Личные данные</th>
+            <th>Вопрос</th>
+            <th>Заметка</th>
+            <th>Статус заявки</th>
+            <th>Действие</th>
+          </tr>
+          {# {% for row in rows %}
+          <tr style = "border-top:2px solid black;">
+          <form method = "POST">
+            <input type="hidden" name="id" value = "{{row.id}}">
+            <td>{{row.id}}</td>
+            <td>
+              Имя: {{row.name}}<br>
+              Телефон: {{row.phone}}<br>
+              Vin: <input name = "vin" style = "width:80%;" value="{{row.vin}}" placeholder = "vin-номер"><br>
+              Почта: <input name = "email" style = "width:80%;" value="{{row.mail}}" placeholder = "Почтовый ящик"><br>
+              <a target="_blank" href="/index.php?route=product/product&product_id={{row.product_id}}">ТОВАР</a>
+            </td>
+            <td>
+              <textarea name = "question" style = "width:100%; height:150px; overflow-y:scroll;">{{row.quest}}</textarea>
+            </td>
+            <td>
+              <textarea name = "notes" style = "width:100%; height:150px; overflow-y:scroll;">{{row.notes}}</textarea>
+            </td>
+            <td>
+              Последнее изменение:
+              <h4>{{row.date}}</h4>
+              <select name = "status">
+                <option {% if row.status == 1 %}selected {% endif %} value = "1">Открыта</option>
+                <option {% if row.status == 2 %}selected {% endif %} value = "2">В обработке</option>
+                <option {% if row.status == 3 %}selected {% endif %} value = "3">Завершена</option>
+                <option {% if row.status == 4 %}selected {% endif %} value = "4">Отклонена</option> 
+              </select>
+            </td>
+            <td>
+              <button name = "action" value = "write">Записать</button><br>
+              <button name = "action" value = "del">Удалить</button>
+            </td>
+          </form>
+          </tr>
+          {% endfor %} #}
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{{ footer }}
