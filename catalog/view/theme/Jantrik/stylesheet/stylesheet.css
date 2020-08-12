@@ -539,7 +539,7 @@ footer h5 {
 }
 .product-thumb {
 	margin-bottom: 20px;
-	overflow: auto;
+    overflow: auto;
 }
 .product-thumb:hover{
     border: 1px solid rgba(241, 238, 238, 0.863);
@@ -570,13 +570,15 @@ footer h5 {
 }
 /* Цвет шрифта рекомендуемые */
 .product-thumb h4 {
+    font-size: 20px;
 	font-weight: bold;
 	color: black;
 }
 .product-thumb .caption {
 	padding: 0 20px;
-	min-height: 180px;
-	color: black;
+	height: 220px;
+    color: black;
+    overflow-y: hidden;
 }
 .product-list .product-thumb .caption {
 	margin-left: 230px;
