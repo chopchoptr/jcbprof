@@ -542,7 +542,6 @@ footer h5 {
     overflow: auto;
 }
 .product-thumb:hover{
-    border: 1px solid rgba(241, 238, 238, 0.863);
     background: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
 }
