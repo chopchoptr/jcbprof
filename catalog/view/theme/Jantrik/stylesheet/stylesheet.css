@@ -322,7 +322,7 @@ div.required .control-label:before {
 /* footer */
 footer {
 	margin-top: 30px;
-	padding-top: 30px;
+    padding-top: 30px;
 	background: black !important;
 	border-top: 1px solid #ddd;
 	color: white;
@@ -426,16 +426,14 @@ footer h5 {
     color: #FCB026;
 }
 .btn-primary {
-	color: #ffffff;
+    border: none!important;
+	color: black!important;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
-	background-repeat: repeat-x;
-	border-color: #1f90bb #1f90bb #145e7a;
+	background:#FCB026!important;
 }
 .btn-primary:hover, .btn-primary:active, .btn-primary.active, .btn-primary.disabled, .btn-primary[disabled] {
-	background-color: #1f90bb;
-	background-position: 0 -15px;
+    background: black!important;
+    color: white!important;
 }
 .btn-warning {
 	color: #ffffff;
@@ -703,16 +701,20 @@ h2.price {
 	clear: both;
 	list-style: none;
 	padding: 0;
-	margin: 0;
+    margin: 0;
+}
+
+.thumbnails img{
+    height: 400px;
 }
 .thumbnails > li {
-	margin-left: 20px;
+    margin-left: 20px;
 }
 .thumbnails {
 	margin-left: -20px;
 }
 .thumbnails > img {
-	width: 100%;
+    width: 100%;
 }
 .image-additional a {
 	margin-bottom: 20px;
@@ -4828,17 +4830,17 @@ legend {
 .callbackform{
     height: 450px;
     max-width: 400px;
-    background: #FCB026;
     color: black;
     border: 1px solid grey;
-    background: white;
+    background-image: url('https://sun9-18.userapi.com/pG5fsqHlzgnyIFsiEtMGR5ziXeFM9SO8mWYqPQ/f-ktYF4vHKI.jpg');
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
 }
 .callbackform input{
     margin-left: 5%;
     min-height: 35px;
-    border-radius: 5px;
+    border-radius: 20px;
     width: 90%;
+    opacity: 0.9;
 }
 .callbackform label{
     display: block;
@@ -4849,9 +4851,10 @@ legend {
 .callbackform textarea{
     width: 90%;
     margin-left: 5%;
-    margin-top: 10px;
+    margin-top: 2px;
     margin-bottom: 10px;
     border-radius: 5px;
+    opacity: 0.9;
 }
 .callbackform button{
     display: block;
@@ -4861,6 +4864,7 @@ legend {
     height: 40px;
     border: 1px solid black;
     width: 90%;
+    opacity: 0.9;
 }
 .callbackform button:hover{
     background: black;
@@ -4868,6 +4872,18 @@ legend {
     -webkit-transform: scale(1.2);
     -ms-transform: scale(1.2);
     transform: scale(1.1);
+}
+.callbackform h1{
+    padding-top: 30px;
+    margin-left: 5%;
+    margin-bottom: 25px;
+    color: black;
+    font-family: 'Montserrat', sans-serif!important;
+    font-size: 30px;
+}
+.bottomline{
+    border-bottom: 2px solid blue!important;
+    padding-bottom: 5px;
 }
 .pos-slider{
 	border-top: none !important;
