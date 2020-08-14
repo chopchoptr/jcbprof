@@ -16,6 +16,7 @@ $data['hyper_positions_top_content'] = $this->load->controller('extension/design
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
+		$data['information'] = $this->load->controller('information/information');
 
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}

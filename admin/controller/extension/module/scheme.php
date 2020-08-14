@@ -25,17 +25,51 @@ class ControllerExtensionModuleScheme extends Controller
     {
         $this->load->model('extension/module/scheme');
         $data = array();
-        if (isset($_GET['action']))
-            $data['action'] = $_GET['action'];
-        // $data['rows'] = $this->model_extension_module_scheme->GetData();        
+        $data['options_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&type=module');
+        $data['categories_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&modpage=categories');
+        $data['schemes_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&modpage=schemes');
         $data += $this->load->language("extension/module/scheme");
         $data += $this->GetBreadCrumbs();
-        $data['action'] = $this->url->link('extension/module/scheme', 'user_token='.$this->session->data['user_token'], true);
-        $data['cancel'] = $this->url->link('marketplace/extension','user_token='.$this->session->data['user_token'].'&type=module', true);
         $data['header'] = $this->load->controller('common/header');
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
-        $this->response->setOutput($this->load->view('extension/module/callback', $data));
+        $data['action'] = $this->url->link('extension/module/scheme', 'user_token='.$this->session->data['user_token'], true);
+        if (isset($_GET['modpage']))
+        {
+            if ($_GET['modpage'] == "categories")
+            {
+                if ($this->request->server["REQUEST_METHOD"]=='POST')
+                {
+                    if ($this->request->post['action'] == "add")
+                        $this->model_extension_module_scheme->add_category();    
+                    if ($this->request->post['action'] == "delete")
+                        $this->model_extension_module_scheme->delete_category();  
+                    if ($this->request->post['action'] == "change")
+                        $this->model_extension_module_scheme->change_category();  
+                    $this->response->redirect( $this->url->link('extension/module/scheme', 'user_token=' . $this->session->data['user_token'] . '&modpage=categories', true));
+                }
+                $data['rows'] = $this->model_extension_module_scheme->get_category();
+                $this->response->setOutput($this->load->view('extension/module/scheme/categories', $data));
+            }
+
+            if ($_GET['modpage'] == "schemes")
+            {
+                $this->response->setOutput($this->load->view('extension/module/scheme/schemes', $data));
+            }
+
+        }
+        else
+        {
+            if ($this->request->server["REQUEST_METHOD"]=='POST')
+            {
+                $this->model_extension_module_scheme->SaveSettings();
+                $this->session->data['success'] = "Настройки сохранены";
+                $this->response->redirect( $this->url->link('marketplace/extension', 'user_token=' . $this->session->data['user_token'] . '&type=module', true));
+            }
+            $data["module_scheme_status"] = $this->model_extension_module_scheme->LoadSettings();
+            $data['cancel'] = $this->url->link('marketplace/extension','user_token='.$this->session->data['user_token'].'&type=module', true);
+            $this->response->setOutput($this->load->view('extension/module/scheme/options', $data));
+        }
     }
 
     private function GetBreadCrumbs ()

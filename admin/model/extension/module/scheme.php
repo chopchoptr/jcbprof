@@ -35,26 +35,43 @@ class ModelExtensionModuleScheme extends Model
         $this->db->query("DROP TABLE IF EXISTS `oc_scheme_point`");
     }
 
+    public function SaveSettings()
+    {
+        $this->load->model('setting/setting');
+        $this->model_setting_setting->editSetting('module_scheme', $this->request->post);
+    }
+
+    public function LoadSettings()
+    {
+        return $this->config->get('module_scheme_status');
+    }
+
     // category funcs
 
     public function add_category()
     {
-
+        $name = $this->defend_str($this->request->post['name']);
+        if(!empty($name))
+            $this->db->query("INSERT INTO `oc_scheme_categories` (`name`) VALUES ('".$name."')");
     }
 
     public function get_category()
     {
-        
+        $query = $this->db->query("SELECT * FROM `oc_scheme_categories`");
+        return($query->rows);     
     }
 
     public function change_category()
     {
-
+        $name = $this->defend_str($this->request->post['name']);
+        if(!empty($name))
+            $query = $this->db->query("UPDATE `oc_scheme_categories` SET `name` = '".$name."' WHERE `id` = ". $this->request->post['id']);
     }
 
     public function delete_category()
     {
-
+        //TODO: change schemes WHERE cat id == delete cat id
+        $this->db->query("DELETE FROM `oc_scheme_categories` WHERE `id` = ". $this->request->post['id']);
     }
 
     // scheme funcs
@@ -97,6 +114,15 @@ class ModelExtensionModuleScheme extends Model
     public function delete_point()
     {
         
+    }
+
+    private function defend_str($string = "")
+    {
+      $str = trim($string);
+      $str = stripslashes($str);
+      $str = strip_tags($str);
+      $str = htmlspecialchars($str);
+      return ($str);
     }
 }
 ?>
