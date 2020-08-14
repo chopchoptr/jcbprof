@@ -748,6 +748,7 @@ h2.price {
 }
 .product-layout{
     max-height: 500px;
+    margin-bottom: 30px;
 }
 
 /* fixed colum left + content + right*/
@@ -976,7 +977,7 @@ body {
     background: hsl(0, 0%, 92%) none repeat scroll 0 0;
     border: 0 none;
     color: #999;
-    height: 41px;
+    height: 49px;
     line-height: 20px;
     padding: 0 20px;
     width: 380px;
@@ -4834,6 +4835,7 @@ legend {
     border: 1px solid grey;
     background-image: url('https://sun9-18.userapi.com/pG5fsqHlzgnyIFsiEtMGR5ziXeFM9SO8mWYqPQ/f-ktYF4vHKI.jpg');
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
+    border-radius: 20px;
 }
 .callbackform input{
     margin-left: 5%;
@@ -4882,7 +4884,7 @@ legend {
     font-size: 30px;
 }
 .bottomline{
-    border-bottom: 2px solid blue!important;
+    border-bottom: 2px solid #FCB026!important;
     padding-bottom: 5px;
 }
 .pos-slider{
