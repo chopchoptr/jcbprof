@@ -58,7 +58,7 @@ function getMousePosition(canvas, event, ctx)
     draw_point(i, x, y, ctx);
     read_list();
     var form = document.getElementById("point-form");
-    form.append(create_input_string(["delete[]","point[]", "x-coord[]", "y-coord[]", "desc[]"], [i, i, x, y, ""], ["checkbox","text", "hidden", "hidden", "text"]));
+    form.append(create_input_string(["delete[]","point[]", "id[]", "x-coord[]", "y-coord[]", "desc[]"], [i, i, 0, x, y, ""], ["checkbox","text", "hidden", "hidden", "hidden", "text"]));
 } 
 
 //read current table to array of objects
@@ -66,6 +66,7 @@ function read_list()
 {
     let opt = document.getElementsByName("delete[]");
     let points = document.getElementsByName("point[]");
+    let ids = document.getElementsByName("id[]");
     let xpoint = document.getElementsByName("x-coord[]");
     let ypoint = document.getElementsByName("y-coord[]");
     let desk = document.getElementsByName("desc[]"); 
@@ -75,6 +76,7 @@ function read_list()
         data.push({
             "option" : opt[index].checked,
             "pnt" : points[index].value,
+            "ids" : ids[index].value,
             "x" : xpoint[index].value,
             "y" : ypoint[index].value,
             "desc" : desk[index].value
@@ -110,7 +112,7 @@ function del_str()
     for (let index = 0; index < i; index++) 
     {
         draw_point(data[index].pnt, parseInt(data[index].x), parseInt(data[index].y), ctx);
-        table.append(create_input_string(["delete[]","point[]", "x-coord[]", "y-coord[]", "desc[]"], [index + 1, index + 1, data[index].x, data[index].y, data[index].desc], ["checkbox","text", "hidden", "hidden", "text"]));
+        table.append(create_input_string(["delete[]","point[]", "id[]", "x-coord[]", "y-coord[]", "desc[]"], [index + 1, index + 1, data[index].ids, data[index].x, data[index].y, data[index].desc], ["checkbox","text", "hidden", "hidden", "hidden", "text"]));
     }
 }
 

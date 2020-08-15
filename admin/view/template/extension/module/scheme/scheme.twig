@@ -30,28 +30,34 @@
         <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
       </div>
       <div class="panel-body">
+      <div class="col-md-6">
              <canvas id = "canv" height='320' width='480' style = "background: url('{{scheme_image}}'); background-repeat:no-repeat; border: 1px solid black;"> </canvas>
-
-   <form method = "POST" action = "#">
-    <table border = "1" id = "point-form">
+      </div>
+    <div class = "col-md-6">
+    <form method = "POST">
+    <table border = "1" id = "point-form" width = "100%">
     <tr>
     <th>X</th>
     <th>№</th>
     <th>Описание</th>
+    <th>Действие</th>
     </tr>
     {% for point in points %}
     <tr>
-        <td><input name="delete[]" type="checkbox" value="{{point.id}}"></td>
+        <td><input name="delete[]" type="checkbox" value="{{point.num}}"></td>
         <td><input name="point[]" type="text" value = "{{point.num}}"></td>
+        <input name="id[]" type="hidden" value="{{point.id}}">
         <input name="x-coord[]" type="hidden" value="{{point.x}}">
         <input name="y-coord[]" type="hidden" value="{{point.y}}">
         <td><input name="desc[]" type="text" value = "{{point.desc}}"></td>
+        <td><a href = "#">Установить фильтр</a></td>
     </tr>
     {% endfor %}
     </table>
-    <button name = "action" value = "save"> Сохранить </button> 
+    <button name = "action" value = "save"> Сохранить список</button> 
     </form>
     <button onclick="del_str()">Удалить выбранное</button>
+    </div>
   <script type="text/javascript" src="view/javascript/scheme.js"></script>
       </div>
     </div>

@@ -120,9 +120,43 @@ class ModelExtensionModuleScheme extends Model
     }
 
     //point funcs
-    public function add_point($id)
+    public function update_points($id)
     {
+        $data = $this->request->post;
+        $upd = array();
+        $new = array();
+        $i = 0;
+        while (isset($data['point'][$i])) 
+        {
+            $row = ['point' => $data['point'][$i],
+                    'id'    => $data['id'][$i],
+                    'x'     => $data['x-coord'][$i],
+                    'y'     => $data['y-coord'][$i],
+                    'desc'  => $data['desc'][$i]];
+            if ($row['id'] == 0)
+                array_push($new, $row);
+            else
+                array_push($upd, $row);
+            $i++;
+        }
+        $old = $this->get_point($id);
+        $del = $this->get_del_points_id($upd, $old);
+        foreach ($del as $del_id) 
+            $this->delete_point($del_id);
+        foreach ($upd as $row) 
+            $this->change_point_desc($row);
+        foreach($new as $row)
+            $this->add_point($row, $id);
+    }
 
+    private function add_point($row, $scheme_id)
+    {
+        $desc = $this->defend_str($row['desc']);
+        $x = (int) $row['x'];
+        $y = (int) $row['y'];
+        $num = (int) $row['point'];
+        $scheme = (int) $scheme_id;
+        $this->db->query("INSERT INTO `oc_scheme_point` (`scheme_id`,`x`, `y`, `num`, `desc`) VALUES (". $scheme .", ". $x .",". $y .", ". $num .", '". $desc ."')");
     }
 
     public function get_point($id)
@@ -131,14 +165,14 @@ class ModelExtensionModuleScheme extends Model
         return($query->rows);
     }
 
-    public function change_pont()
+    private function change_point_desc($data)
     {
-        
+        $this->db->query("UPDATE `oc_scheme_point` SET `num` = ". $data['point'] .", `desc` = '". $data['desc'] ."' WHERE `id` = ". $data['id']);
     }
 
-    public function delete_point()
+    public function delete_point($id)
     {
-        
+        $this->db->query("DELETE FROM `oc_scheme_point` WHERE `id` = ". $id);
     }
 
     private function defend_str($string = "")
@@ -167,6 +201,14 @@ class ModelExtensionModuleScheme extends Model
                 return ($name);
             }
         return (-1);
+    }
+
+    private function get_del_points_id($upd, $old)
+    {
+        $upd_id = array_column($upd, 'id');
+        $old_id = array_column($old, 'id');
+        $arr = array_diff($old_id, $upd_id);
+        return ($arr);
     }
 }
 ?>

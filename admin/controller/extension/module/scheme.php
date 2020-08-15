@@ -74,14 +74,16 @@ class ControllerExtensionModuleScheme extends Controller
             {
                 if ($this->request->server["REQUEST_METHOD"]=='POST')
                 {
-                    // CRUD Points to scheme
+                    $scheme_id = $_GET['scheme_id'];
+                    if ($scheme_id > 0 && $this->request->post['action'] == "save")
+                        $this->model_extension_module_scheme->update_points($scheme_id);
+                    $this->response->redirect( $this->url->link('extension/module/scheme', 'user_token=' . $this->session->data['user_token'] . '&modpage=scheme&scheme_id='. $scheme_id, true));
                 }
                 if (isset($_GET['scheme_id']) && $_GET['scheme_id'] > 0)
                 {
                     $scheme = $this->model_extension_module_scheme->get_scheme_by_id($_GET['scheme_id']);
                     $data['scheme_image'] = "/image/scheme/". $scheme['image'];
                     $data['points'] = $this->model_extension_module_scheme->get_point($_GET['scheme_id']);
-                    print_r($data['points']);
                 }
                 $this->response->setOutput($this->load->view('extension/module/scheme/scheme', $data));
             }
