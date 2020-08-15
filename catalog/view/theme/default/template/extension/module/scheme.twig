@@ -1,0 +1,59 @@
+{{ header }}
+<div class="container">
+    <div id="information-information" class="row">
+        {{ column_left }}
+        {% if column_left and column_right %}
+            {% set class = 'col-sm-6' %}
+        {% elseif column_left or column_right %}
+            {% set class = 'col-sm-9' %}
+        {% else %}
+            {% set class = 'col-sm-12' %}
+        {% endif %}
+    <div id="content" class="{{ class }}">
+       <h1> Подберите по схеме необходимый товар </h1>
+       <form method = "GET">
+            <input type = "hidden" name = "route" value = 'extension/module/scheme'>
+            <h3>Тип двигателя</h3>
+            <label ><input type="radio" {% if engine == 1 %} checked {% endif %} name = "engine" value = "1">3 СХ</label>
+            <label><input type="radio" {% if engine == 2 %} checked {% endif %} name = "engine" value = "2">4 СХ</label>
+            <label><input type="radio" {% if engine == 0 %} checked {% endif %} name = "engine" value = "0">Универсальный</label>
+            <h3>Категория</h3>
+            {% for cat in cats %}
+            <button {% if sc_cat_id == cat.id %}style = "color:red;" {% endif %} name = "sc_cat_id" value = "{{cat.id}}"> {{cat.name}}</button>     
+            {% endfor %}
+       </form>
+       <div class = 'col-md-12'>
+       {% for scheme in schemes %}
+       <div class = 'col-md-3' {% if sc_id == scheme.id %} style = "border: 2px solid black;" {% endif %}>
+            <a href = "{{cat_link}}&scheme_id={{scheme.id}}"><img width = "80%" src = "/image/scheme/{{scheme.image}}">
+            <h4>{{scheme.name}}</h4></a>
+        </div>
+       {% endfor %}
+       </div>
+       {% if scheme %}
+           <div class = "col-md-6">
+        <canvas  id = "canv-1" height='320' width='480' style = "border:1px solid black; background:url('https://wikers.ru/wp-content/uploads/2017/06/bc-kshp.jpg'); background-repeat:no-repeat;"> </canvas>
+     </div>
+   <div class = "col-md-6">
+    <table border = "1" id = "point-form" width = "100%">
+    <tr>
+    <th>№</th>
+    <th>Точка</th>
+    </tr>
+    {% for point in points %}
+    <tr>
+        <td><input name="point[]" type="hidden" value = "{{point.num}}"> {{point.num}} </td>
+        <input name="x-coord[]" type="hidden" value="{{point.x}}">
+        <input name="y-coord[]" type="hidden" value="{{point.y}}">
+        <td><input name="desc[]" type="hidden" value = "{{point.desc}}">{{point.desc}}
+        <a target="_blank" href = "{{product_link}}&filter={{point.filter}}">  Просмотреть товары </a>
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+    {% endif %}
+    </div>
+    {{ column_right }}</div>
+</div>
+<script type="text/javascript" src="catalog/view/javascript/scheme.js"></script>
+{{ footer }}
