@@ -51,7 +51,7 @@
         <input name="x-coord[]" type="hidden" value="{{point.x}}">
         <input name="y-coord[]" type="hidden" value="{{point.y}}">
         <td><input name="desc[]" type="text" value = "{{point.desc}}"></td>
-        <td><a href = "#">Установить фильтр</a></td>
+        <td><a href = "{{point_link}}{{point.id}}">Установить фильтр</a></td>
     </tr>
     {% endfor %}
     </table>

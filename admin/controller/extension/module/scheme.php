@@ -85,6 +85,7 @@ class ControllerExtensionModuleScheme extends Controller
                 }
                 if (isset($_GET['scheme_id']) && $_GET['scheme_id'] > 0)
                 {
+                    $data['point_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&modpage=point&point_id=');
                     $scheme = $this->model_extension_module_scheme->get_scheme_by_id($_GET['scheme_id']);
                     $data['scheme_image'] = "/image/scheme/". $scheme['image'];
                     $data['points'] = $this->model_extension_module_scheme->get_points($_GET['scheme_id']);
