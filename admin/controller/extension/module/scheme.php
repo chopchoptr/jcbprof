@@ -23,6 +23,7 @@ class ControllerExtensionModuleScheme extends Controller
 
     public function index()
     {
+        //prepare module data
         $this->load->model('extension/module/scheme');
         $data = array();
         $data['options_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&type=module');
@@ -34,8 +35,10 @@ class ControllerExtensionModuleScheme extends Controller
         $data['column_left'] = $this->load->controller('common/column_left');
         $data['footer'] = $this->load->controller('common/footer');
         $data['action'] = $this->url->link('extension/module/scheme', 'user_token='.$this->session->data['user_token'], true);
+        // change options page
         if (isset($_GET['modpage']))
         {
+            //categories page
             if ($_GET['modpage'] == "categories")
             {
                 if ($this->request->server["REQUEST_METHOD"]=='POST')
@@ -51,7 +54,7 @@ class ControllerExtensionModuleScheme extends Controller
                 $data['rows'] = $this->model_extension_module_scheme->get_category();
                 $this->response->setOutput($this->load->view('extension/module/scheme/categories', $data));
             }
-
+            //schemes page
             if ($_GET['modpage'] == "schemes")
             {
                 if ($this->request->server["REQUEST_METHOD"]=='POST')
@@ -70,6 +73,7 @@ class ControllerExtensionModuleScheme extends Controller
                 $data['point_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&modpage=scheme');
                 $this->response->setOutput($this->load->view('extension/module/scheme/schemes', $data));
             }
+            //add points to scheme page
             if ($_GET['modpage'] == "scheme")
             {
                 if ($this->request->server["REQUEST_METHOD"]=='POST')
@@ -83,12 +87,33 @@ class ControllerExtensionModuleScheme extends Controller
                 {
                     $scheme = $this->model_extension_module_scheme->get_scheme_by_id($_GET['scheme_id']);
                     $data['scheme_image'] = "/image/scheme/". $scheme['image'];
-                    $data['points'] = $this->model_extension_module_scheme->get_point($_GET['scheme_id']);
+                    $data['points'] = $this->model_extension_module_scheme->get_points($_GET['scheme_id']);
                 }
                 $this->response->setOutput($this->load->view('extension/module/scheme/scheme', $data));
             }
+            //add filters to point page
+            if ($_GET['modpage'] == "point")
+            {
+                //update data on server
+                if ($this->request->server["REQUEST_METHOD"]=='POST')
+                {
+                    $point_id = $_GET['point_id'];
+                    if ($point_id > 0 && $this->request->post['action'] == "update")
+                        $this->model_extension_module_scheme->update_point($point_id);
+                    $this->response->redirect( $this->url->link('extension/module/scheme', 'user_token=' . $this->session->data['user_token'] . '&modpage=point&point_id='. $point_id, true));
+                }
+                // render form
+                if (isset($_GET['point_id']) && $_GET['point_id'] > 0)
+                {
+                    $data['point'] = $this->model_extension_module_scheme->get_point($_GET['point_id']);
+                    $data['point_flt'] = explode(",",$data['point']['filter']);
+                    $data['filtres'] = $this->model_extension_module_scheme->get_filters();
+                }
+                $this->response->setOutput($this->load->view('extension/module/scheme/point', $data));
+            }
 
         }
+        // module options page
         else
         {
             if ($this->request->server["REQUEST_METHOD"]=='POST')

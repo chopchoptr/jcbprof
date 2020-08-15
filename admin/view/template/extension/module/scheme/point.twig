@@ -5,6 +5,9 @@
  
       <!-- Кнопки управления -->
       <div class="pull-right">
+      <a href="{{options_link}}"><button>Настройки модуля</button></a>
+      <a href="{{categories_link}}"><button>Категории схем</button></a>
+      <a href="{{schemes_link}}"><button>Схемы</button></a>
         <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
         <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
       </div>
@@ -28,7 +31,30 @@
         <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
       </div>
       <div class="panel-body">
-        <h1>ТУТ НУЖНО БУДЕТ НАСТРАИВАТЬ ТОЧКИ</h1>
+        <h1> {{point.desc}}</h1>
+      <form method = "POST"> 
+       <table width = "100%" border = "1">
+        <tr>
+          <th>Группа фильтров</th>
+          <th> Значение Фильтров </th>
+        </tr>      
+        {% set tmp = 0 %}
+       {% for flt in filtres %}
+        {% if flt.filter_group_id > tmp %}
+          <tr>
+            <td>{{flt.group_name}}</td>
+            <td>
+        {% set tmp = tmp + 1 %}
+        {% endif %}
+              <label><input type = "checkbox" {% if flt.filter_id in point_flt %} checked {% endif %} name = "filter_id[]" value = "{{ flt.filter_id}}">{{flt.filter}} {{tmp}}</label><br>
+        {% if flt.filter_group_id > tmp %}
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+       </table>
+       <button name = "action" value = "update"> Обновить фильтры у точки </button>
+       </form> 
       </div>
     </div>
   </div>

@@ -139,7 +139,7 @@ class ModelExtensionModuleScheme extends Model
                 array_push($upd, $row);
             $i++;
         }
-        $old = $this->get_point($id);
+        $old = $this->get_points($id);
         $del = $this->get_del_points_id($upd, $old);
         foreach ($del as $del_id) 
             $this->delete_point($del_id);
@@ -159,10 +159,29 @@ class ModelExtensionModuleScheme extends Model
         $this->db->query("INSERT INTO `oc_scheme_point` (`scheme_id`,`x`, `y`, `num`, `desc`) VALUES (". $scheme .", ". $x .",". $y .", ". $num .", '". $desc ."')");
     }
 
-    public function get_point($id)
+    public function get_filters()
+    {
+        $query = $this->db->query("select  a.name as filter, a.filter_id, a.filter_group_id, b.name as group_name from oc_filter_description a join oc_filter_group_description b on a.filter_group_id = b.filter_group_id ORDER BY a.filter_group_id");
+        return ($query->rows);
+    }
+
+    public function get_points($id)
     {
         $query = $this->db->query("SELECT * FROM `oc_scheme_point` WHERE `scheme_id` = ".$id);
         return($query->rows);
+    }
+
+    public function get_point($id)
+    {
+        $query = $this->db->query("SELECT * FROM `oc_scheme_point` WHERE `id` = ".$id);
+        return($query->rows[0]);
+    }
+
+    public function update_point($id)
+    {
+        $data = implode(",", $this->request->post['filter_id']);
+        $this->db->query("UPDATE `oc_scheme_point` SET `filter` = '". $data."' WHERE `id` = ". $id);
+
     }
 
     private function change_point_desc($data)
