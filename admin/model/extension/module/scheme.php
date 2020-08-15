@@ -81,7 +81,7 @@ class ModelExtensionModuleScheme extends Model
         $name = $this->defend_str($this->request->post['scheme_name']);
         $engine = (int) $this->request->post['scheme_engine'] >= 0 ? $this->request->post['scheme_engine']  : 0 ;
         $cat = (int) $this->request->post['scheme_cat'] >= 0 ? $this->request->post['scheme_cat']  : 0 ;
-        if (!empty($name))
+        if (!empty($name) && isset($_FILES["scheme_image"]))
         {
             $image = $this->upload_image($_FILES["scheme_image"]);
             if ($image != -1)

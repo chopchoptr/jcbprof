@@ -45,7 +45,7 @@
           <tr>
             <td><input type="hidden" name = "id" value = "{{ row.id }}">{{row.id}}</td>
             <td><img src = "/image/scheme/{{row.image}}" width = "100px"></td>
-            <td><input name = "name" value = "{{row.name}}"></td>
+            <td><input name = "scheme_name" value = "{{row.name}}"></td>
             <td> <select name = "scheme_cat">{% for cat in cats %}
             <option value = "{{cat.id}}" {% if cat.id == row.category_id %} selected {% endif %}>{{cat.name}}</option>
             {% endfor %} </select></td>
