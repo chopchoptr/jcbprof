@@ -4857,6 +4857,7 @@ legend {
     margin-bottom: 10px;
     border-radius: 5px;
     opacity: 0.9;
+    max-height: 120px;
 }
 .callbackform button{
     display: block;
