@@ -37,7 +37,7 @@
               Телефон: {{row.phone}}<br>
               Vin: <input name = "vin" style = "width:80%;" value="{{row.vin}}" placeholder = "vin-номер"><br>
               Почта: <input name = "email" style = "width:80%;" value="{{row.mail}}" placeholder = "Почтовый ящик"><br>
-              <a target="_blank" href="/index.php?route=product/product&product_id={{row.product_id}}">ТОВАР</a>
+              <a target="_blank" href="{{row.product_id}}">ТОВАР</a>
             </td>
             <td>
               <textarea name = "question" style = "width:100%; height:150px; overflow-y:scroll;">{{row.quest}}</textarea>

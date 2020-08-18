@@ -7,6 +7,7 @@ class ModelExtensionModuleCallback extends Model
       if ($this->request->post['action'] == "send_callback")
       {
         $data = $this->request->post;
+        
         if (empty($data['consumer_name']) || empty($data['consumer_tel']))
           return (['id' => 0]);
         date_default_timezone_set("Europe/Moscow");
@@ -18,12 +19,9 @@ class ModelExtensionModuleCallback extends Model
         $data['consumer_text'] = $this->defend_str($data['consumer_text']);
         $data['consumer_tel'] = $this->validate_tel($data['consumer_tel']);
         $data['consumer_mail'] = $this->validate_mail($data['consumer_mail']);
-        if (!empty($data['product_id']))
-          $data['product_id'] = abs(intval($data['product_id']));
         $this->db->query("INSERT INTO `oc_callback`(`name`, `phone`, `mail`, `vin`, `product_id`, `quest`, `date`) VALUES ('".$data['consumer_name'] ."','".$data['consumer_tel'] ."','".$data['consumer_mail'] ."','".$data['consumer_vin'] ."','".$data['product_id'] ."','".$data['consumer_text'] ."', '". $time ."')");
-        $query = $this->db->query("SELECT id FROM `oc_callback` WHERE `date` = '".$time."'");
+        $query = $this->db->query("SELECT `id`, `product_id` FROM `oc_callback` WHERE `date` = '".$time."'");
         return ($query->row);
-        return(['id' => 0]);
       }
       return ("");
     }

@@ -1,7 +1,8 @@
     {% if ticket%}
     <div style = "width:320px; height:240px; position:fixed; right:40%; top:30%; background:#fff; z-index:999999; border: 1px solid #000">
     <h2> Номер вашей заявки: {{ticket}} </h2>
-    <a href="{{url}}?{% if route|length %}route={{route}}&{%endif%}{%if product_id%}product_id={{product_id}}{%endif%}"><button>OK</button></a>
+    {{ticket_url}}
+    <a href="{{ticket_url}}"><button>OK</button></a>
     </div>
     {%endif%}
     <h1>{{ text_test }}</h1>
