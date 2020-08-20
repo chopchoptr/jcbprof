@@ -1,16 +1,17 @@
 {{ header }}
 
 <div id="common-home" class="container">
-  <div class="row">{{ column_left }}
-    {% if column_left and column_right %}
-    {% set class = 'col-sm-6' %}
-    {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
-    {% else %}
-    {% set class = 'col-sm-12' %}
-    {% endif %}
-    <div id="content" class="{{ class }}">{{ content_top }}{{ content_bottom }}</div>
-    {{ column_right }}</div>
+    <div class="row">{{ column_left }}
+        {% if column_left and column_right %}
+        {% set class = 'col-sm-6' %}
+        {% elseif column_left or column_right %}
+        {% set class = 'col-sm-9' %}
+        {% else %}
+        {% set class = 'col-sm-12' %}
+        {% endif %}
+        <div id="content" class="{{ class }}">{{ content_top }}{{ content_bottom }}</div>
+        {{ column_right }}
+    </div>
 </div>
         <!-- Banner Start -->
         <div class="upper-banner banner pb-60">
@@ -97,96 +98,9 @@
             </div>
         </div>
         <!-- Company Policy End -->              
-        <!-- Blog Page Start -->
-        <div class="blog-area pb-60">
-            <div class="container">
+        
                 <div class="group-title">
                     <h2>Блог</h2>
                 </div>
-                 <!-- Popular Categorie Activation Start -->
-                 <div class="blog-active owl-carousel">
-                    <!-- Single Blog Start -->
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="#"><img src="catalog/view/theme/Jantrik/jantrik/img/banner/2.png" alt="blog-image"></a>
-                        </div>
-                        <div class="blog-content">
-                                <h4 class="blog-title"><a href="#">Шкворни на JCB, эксплуатация и замена</a></h4>
-                            <div class="readmore">
-                                <a href="#">Читать далее.....</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="#"><img src="catalog/view/theme/Jantrik/jantrik/img/banner/2.png" alt="blog-image"></a>
-                        </div>
-                        <div class="blog-content">
-                                <h4 class="blog-title"><a href="#">Пальцы на JCB, особенности и советы</a></h4>
-                            <div class="readmore">
-                                <a href="#">Читать далее.....</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                    <!-- Single Blog Start -->
-                    <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="#"><img src="catalog/view/theme/Jantrik/jantrik/img/banner/2.png" alt="blog-image"></a>
-                        </div>
-                        <div class="blog-content">
-                                <h4 class="blog-title"><a href="#">Какой двигатель на JCB лучше Perkins или DieselMax?</a></h4>
-                            <div class="readmore">
-                                <a href="#">Читать далее.....</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                     <!-- Single Blog Start -->
-                     <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="#"><img src="catalog/view/theme/Jantrik/jantrik/img/banner/2.png" alt="blog-image"></a>
-                        </div>
-                        <div class="blog-content">
-                                <h4 class="blog-title"><a href="#">Как правильно подобрать масла на JCB</a></h4>
-                            <div class="readmore">
-                                <a href="#">Читать далее.....</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                     <!-- Single Blog Start -->
-                     <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="#"><img src="catalog/view/theme/Jantrik/jantrik/img/banner/2.png" alt="blog-image"></a>
-                        </div>
-                        <div class="blog-content">
-                                <h4 class="blog-title"><a href="#">Как снять ТНВД на двигателях Perkins и DISELMAX JCB 3CX , JCB 4 CX</a></h4>
-                            <div class="readmore">
-                                <a href="#">Читать далее.....</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                     <!-- Single Blog Start -->
-                     <div class="single-blog">
-                        <div class="blog-img">
-                            <a href="#"><img src="catalog/view/theme/Jantrik/jantrik/img/banner/2.png" alt="blog-image"></a>
-                        </div>
-                        <div class="blog-content">
-                                <h4 class="blog-title"><a href="#">Как правильно выбрать гидромолот?/Полезная информация для владельцев спецтехники</a></h4>
-                            <div class="readmore">
-                                <a href="#">Читать далее.....</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Single Blog End -->
-                 </div>
-                 <!-- Popular Categorie Activation End -->
-            </div>
-            <!-- Container End -->
-        </div>
-        <!-- Blog Page End -->
+                 
 {{ footer }}

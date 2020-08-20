@@ -131,7 +131,7 @@ div.required .control-label:before {
 }
 /* logo */
 #logo {
-	margin: 0 0 10px 0;
+    margin: 0 0 10px 0;
 }
 #logo h1 {
 	font-size: 28px;
@@ -202,11 +202,9 @@ div.required .control-label:before {
 }
 /* menu */
 #menu {
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
-	background-repeat: repeat-x;
-	border-color: #1f90bb #1f90bb #145e7a;
-	min-height: 40px;
+	background: black;
+    min-height: 40px;
+    margin-bottom: 0px!important;
 }
 #menu .nav > li > a {
 	color: #fff;
@@ -1032,7 +1030,8 @@ input#newsletter-permission {
 .header-top-left {
     font-size: 18px;
     color: #FCB026;
-	padding-left: 10px;
+    padding-top: 6px;
+    padding-right: 10px;
 }
 
 .header-list-menu > li > span {
@@ -1273,13 +1272,13 @@ ul.ht-dropdown.dropdown-style-two li {
    display: -moz-flex;
    display: -ms-flex;
    display: -o-flex;
-   display: flex;
+   display: inline-block;
     -ms-align-items: center;
     align-items: center;
 }
 .logo img {
-    max-height: 48px;
-    max-width: 400px;
+    height: 40px;
+    max-width: 100%;
 }
 /* Меню цвет */
 .middle-menu-list > li > a {
@@ -2169,6 +2168,7 @@ ul.ht-dropdown.dropdown-style-two li {
     margin-top: 12px;
 }
 .payment-mth{margin-top: 30px;}
+
 .footer-content ul li:not(:last-child) {
     line-height: 30px;
 }
@@ -4902,6 +4902,7 @@ legend {
     line-height: 1;
     text-decoration:none;
     cursor: pointer;
+    text-transform: uppercase;
 }
 .menu__item:after {
     background-color: white;
@@ -4916,4 +4917,29 @@ legend {
 .menu__item:hover:after,
 .menu__item:focus:after {
     width: 100%;
+}
+
+.navbar-collapse{
+    margin: 0px auto;
+    width: 600px!important;
+}
+
+.navbar{
+    border-radius: 0px!important;
+}
+
+#menu{
+    min-height: 40px;
+}
+
+
+@media (max-width: 1420px) {
+	.header-top-left {
+        font-size: 16px;
+	}
+}
+
+@media (max-width: 990px) {
+    .logoAdS{
+    }
 }

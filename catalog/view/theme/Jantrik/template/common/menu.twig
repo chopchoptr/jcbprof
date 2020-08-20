@@ -1,95 +1,39 @@
 {% if categories %}
-<!-- Header Bottom Start -->
-            <div class="header-bottom header-sticky">
-                    <div class="row">
-                    <div class="col-sm-2">
-                            <div class="logo">
-                                <a href="{{ home }}"><img src="catalog/view/theme/Jantrik/jantrik/img/logo/logo.png" alt="logo-image"></a>
-                            </div>
-                        </div>
-                    
-                        
-                        <!-- Primary Vertical-Menu End -->
-                        <!-- Search Box Start -->
-                        <div class="col-sm-8">
-                            <div class="middle-menu text-center">
-                                <nav>
-                                    <ul class="middle-menu-list">
-                                        <li><a href="{{ home }}" class="menu__item">Главная</a></li>
-                                        <li><a href="#" class="menu__item">Запчасти<i class="fa fa-angle-down"></i></a>
-                                            <!-- Home Version Dropdown Start -->
-                                            <ul class="ht-dropdown dropdown-style-two">
-                                                <li><a href="#">Подкатегория</a>
-                                                    <!-- Start Two Step -->
-                                                    <ul class="ht-dropdown dropdown-style-two sub-menu">
-                                                        <li><a href="#">Подкатегория</a>
-                                                        </li>
-                                                        <li><a href="#">Подкатегория</a></li>
-                                                        <li><a href="#">Подкатегория</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#">Подкатегория</a></li>
-                                                <li><a href="#">Подкатегория</a></li>
-                                                <li><a href="#">Подкатегория</a></li>
-                                                <li><a href="#">Подкатегория</a></li>
-                                                <li><a href="#">Подкатегория</a></li>
-                                            </ul>
-                                            <!-- Home Version Dropdown End -->
-                                        </li>
-                                        <li><a href="#" class="menu__item">О нас</a></li>                                        
-                                        <li><a href="#" class="menu__item">Блог<i class="fa fa-angle-down"></i></a>
-                                            <!-- Home Version Dropdown Start -->
-                                            <ul class="ht-dropdown dropdown-style-two">
-                                                <li><a href="#">Блог 1</a></li>
-                                                <li><a href="#">Блог 2</a></li>
-                                            </ul>
-                                            <!-- Home Version Dropdown End -->
-                                        </li>
-                                        <li><a href="#" class="menu__item">Поставщики</a></li>                                        
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                        <!-- Search Box End -->
-                        <!-- Cartt Box Start -->
-                        <div class="col-sm-2 d-center">
-                            <div class="header-top-left">
-                               <i class="fa fa-phone-square"></i> +7 (999) 999-99-99
-                            </div>                        
-                        </div>
-                        <!-- Cartt Box End -->
-                        <!-- Mobile Menu  End -->                        
-                    </div>
-                    <!-- Row End -->
-                <!-- Container End -->
-            </div>
-            <!-- Header Bottom End -->
-<!--<div class="container">
-  <nav id="menu" class="navbar">
-    <div class="navbar-header"><span id="category" class="visible-xs">{{ text_category }}</span>
-      <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+<div class>
+    
+    <nav id="menu" class="navbar">
+    <div class="row">
+      <div class="navbar-header"><span id="category" class="visible-xs">Меню</span>
+        <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+      </div>
+      <div class="col-sm-2">
+        <div class="logo">
+          <a href="{{ home }}"><img class="logoAd" src="catalog/view/theme/Jantrik/jantrik/img/logo/logo.png" alt="logo-image"></a>
+        </div>
+      </div>
+      <div class="col-sm-8">
+      <div class="collapse navbar-collapse navbar-ex1-collapse menucvet ">
+      <div class="contactinfo">
+        <ul class="nav navbar-nav">
+          {% for category in categories %}
+          <li><a href="{{ home }}" class="menu__item">Главная</a></li>
+          <li><a href="{{ catalogs }}" class="menu__item">Запчасти</a></li>
+          <li><a href="{{ contact }}" class="menu__item">О нас</a></li>
+          <li><a href="{{  blog  }}" class="menu__item">Блог</a></li>
+          <li><a href="{{  blog  }}" class="menu__item">Поставщики</a></li>
+          {% endfor %}
+
+        </ul>
+      </div>
+      </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="header-top-left pull-right">
+            <i class="fa fa-phone-square"></i> +7 (999) 999-99-99
+        </div>
+      </div>
     </div>
-    <div class="collapse navbar-collapse navbar-ex1-collapse">
-      <ul class="nav navbar-nav">
-        {% for category in categories %}
-        {% if category.children %}
-        <li class="dropdown"><a href="{{ category.href }}" class="dropdown-toggle" data-toggle="dropdown">{{ category.name }}</a>
-          <div class="dropdown-menu">
-            <div class="dropdown-inner"> {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
-              <ul class="list-unstyled">
-                {% for child in children %}
-                <li><a href="{{ child.href }}">{{ child.name }}</a></li>
-                {% endfor %}
-              </ul>
-              {% endfor %}</div>
-            <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> </div>
-        </li>
-        {% else %}
-        <li><a href="{{ category.href }}">{{ category.name }}</a></li>
-        {% endif %}
-        {% endfor %}
-      </ul>
+    </nav>
+    
     </div>
-  </nav>
-</div>-->
 {% endif %} 
