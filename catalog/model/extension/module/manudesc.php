@@ -1,5 +1,5 @@
 <?php
-class ModelExtensionModuleScheme extends Model 
+class ModelExtensionModuleManudesc extends Model 
 {
     public function get_manufacturers()
     {
