@@ -15,7 +15,7 @@
 	<![CDATA[
 			if ($this->user->hasPermission('access', 'extension/module/scheme')) {
 				$catalog[] = array(
-					'name'	   => $this->language->get('text_scheme'),
+					'name'	   => "Интерактивные схемы",
 					'href'     => $this->url->link('extension/module/scheme', 'user_token=' . $this->session->data['user_token']."&modpage=categories", true),
 					'children' => array()		
 				);
