@@ -5,9 +5,9 @@
  
       <!-- Кнопки управления -->
       <div class="pull-right">
-      <a href="{{options_link}}"><button>Настройки модуля</button></a>
-      <a href="{{categories_link}}"><button>Категории схем</button></a>
-      <a href="{{schemes_link}}"><button>Схемы</button></a>
+       <a href="{{categories_link}}"><button>{{scheme_cat}}</button></a>
+       <a href="{{schemes_link}}"><button>{{schemes}}</button></a>
+       <a href="{{options_link}}"><button>{{settings}}</button></a>
       </div>
  
       <!-- Название модуля -->
@@ -26,27 +26,27 @@
   <div class="container-fluid">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{categories_title}}</h3>
       </div>
       <div class="panel-body">
       <table border = "1" width = "100%">
         <tr>
             <th>id</th>
-            <th>Название категории</th>
-            <th>Действие</th>
+            <th>{{scheme_cat_name}}</th>
+            <th>{{text_action}}</th>
         </tr>
       {% for row in rows %}
       <form method = "POST">
         <td><input type="hidden" name = "id" value = "{{row.id}}"> {{row.id}}</td>
         <td><input  name = "name" value = "{{row.name}}"></input></td>
-        <td><button name = "action" value = "change">Изменить</button><button name = "action" value = "delete">УДАЛИТЬ</button></td>
+        <td><button name = "action" value = "change">{{text_action_change}}</button><button name = "action" value = "delete">{{text_action_remove}}</button></td>
         </tr>
       </form>
       {% endfor %}
     <form method = "POST">
         <td>#</td>
-        <td><input name = "name" placeholder = "Название новой категории"></input></td>
-        <td><button name = "action" value = "add">ДОБАВИТЬ</button></td>
+        <td><input name = "name" placeholder = "{{new_cat_placeholder}}"></input></td>
+        <td><button name = "action" value = "add">{{text_action_add}}</button></td>
       </form>
       </table>
       </div>

@@ -5,30 +5,25 @@
  
       <!-- Кнопки управления -->
       <div class="pull-right">
-      <a href="{{options_link}}"><button>Настройки модуля</button></a>
-      <a href="{{categories_link}}"><button>Категории схем</button></a>
-      <a href="{{schemes_link}}"><button>Схемы</button></a>
-        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
-        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+        <a href="{{categories_link}}"><button>{{scheme_cat}}</button></a>
+        <a href="{{schemes_link}}"><button>{{schemes}}</button></a>
+        <a href="{{options_link}}"><button>{{settings}}</button></a>
       </div>
- 
       <!-- Название модуля -->
       <h1>{{ heading_title }}</h1>
- 
       <!-- Хлебные крошки -->
       <ul class="breadcrumb">
         {% for breadcrumb in breadcrumbs %}
         <li><a href="{{ breadcrumb.href }}">{{ breadcrumb.text }}</a></li>
         {% endfor %}
       </ul>
- 
     </div>
   </div>
  
   <div class="container-fluid">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+        <h3 class="panel-title">{{ text_edit_options }}</h3>
       </div>
       <div class="panel-body">
         <form action="{{ action }}" method="post" enctype="multipart/form-data" id="form-module" class="form-horizontal">
@@ -47,7 +42,7 @@
                 <option value="0" selected="selected">{{ text_disabled }}</option>
                 {% endif %}
               </select>
- 
+            <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
             </div>
           </div>
  

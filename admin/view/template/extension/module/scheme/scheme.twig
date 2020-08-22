@@ -5,11 +5,9 @@
  
       <!-- Кнопки управления -->
       <div class="pull-right">
-      <a href="{{options_link}}"><button>Настройки модуля</button></a>
-      <a href="{{categories_link}}"><button>Категории схем</button></a>
-      <a href="{{schemes_link}}"><button>Схемы</button></a>
-        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
-        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+      <a href="{{categories_link}}"><button>{{scheme_cat}}</button></a>
+      <a href="{{schemes_link}}"><button>{{schemes}}</button></a>
+      <a href="{{options_link}}"><button>{{settings}}</button></a>
       </div>
  
       <!-- Название модуля -->
@@ -28,7 +26,7 @@
   <div class="container-fluid">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{scheme_title}}</h3>
       </div>
       <div class="panel-body">
       <div class="col-md-6">
@@ -40,8 +38,8 @@
     <tr>
     <th>X</th>
     <th>№</th>
-    <th>Описание</th>
-    <th>Действие</th>
+    <th>{{scheme_point_desc}}</th>
+    <th>{{text_action}}</th>
     </tr>
     {% for point in points %}
     <tr>
@@ -51,13 +49,13 @@
         <input name="x-coord[]" type="hidden" value="{{point.x}}">
         <input name="y-coord[]" type="hidden" value="{{point.y}}">
         <td><input name="desc[]" type="text" value = "{{point.desc}}"></td>
-        <td><a href = "{{point_link}}{{point.id}}">Установить фильтр</a></td>
+        <td><a href = "{{point_link}}{{point.id}}">{{text_action_set_filt}}</a></td>
     </tr>
     {% endfor %}
     </table>
-    <button name = "action" value = "save"> Сохранить список</button> 
+    <button name = "action" value = "save">{{text_save_list}}</button> 
     </form>
-    <button onclick="del_str()">Удалить выбранное</button>
+    <button onclick="del_str()">{{text_rem_ch}}</button>
     </div>
   <script type="text/javascript" src="view/javascript/scheme.js"></script>
       </div>

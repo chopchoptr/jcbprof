@@ -5,11 +5,9 @@
  
       <!-- Кнопки управления -->
       <div class="pull-right">
-      <a href="{{options_link}}"><button>Настройки модуля</button></a>
-      <a href="{{categories_link}}"><button>Категории схем</button></a>
-      <a href="{{schemes_link}}"><button>Схемы</button></a>
-        <button type="submit" form="form-module" data-toggle="tooltip" title="{{ button_save }}" class="btn btn-primary"><i class="fa fa-save"></i></button>
-        <a href="{{ cancel }}" data-toggle="tooltip" title="{{ button_cancel }}" class="btn btn-default"><i class="fa fa-reply"></i></a>
+      <a href="{{categories_link}}"><button>{{scheme_cat}}</button></a>
+      <a href="{{schemes_link}}"><button>{{schemes}}</button></a>
+      <a href="{{options_link}}"><button>{{settings}}</button></a>
       </div>
  
       <!-- Название модуля -->
@@ -28,17 +26,17 @@
   <div class="container-fluid">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{ text_edit }}</h3>
+        <h3 class="panel-title"><i class="fa fa-pencil"></i> {{schemes_title}}</h3>
       </div>
       <div class="panel-body">
         <table width="100%" border="1">
           <tr>
             <th>id</th>
-            <th>Миниатюра</th>
-            <th>Название</th>
-            <th>Категория</th>
-            <th>Двигатель</th>
-            <th>Действие</th>
+            <th>{{scheme_image}}</th>
+            <th>{{scheme_name}}</th>
+            <th>{{scheme_cat}}</th>
+            <th>{{scheme_engine}}</th>
+            <th>{{text_action}}</th>
           </tr>
            {% for row in rows %}
            <form method = "POST">
@@ -51,14 +49,14 @@
             {% endfor %} </select></td>
             <td>
             <select name = "scheme_engine">
-                <option value = "0" {% if row.engine == 0 %} checked {% endif %}>Универсальный</option>
+                <option value = "0" {% if row.engine == 0 %} checked {% endif %}>{{universal_engine}}</option>
                 <option value = "1" {% if row.engine == 1 %} checked {% endif %}>3 СХ</option>
                 <option value = "2" {% if row.engine == 2 %} checked {% endif %}>4 СХ</option>
                 </select>
             </td>
-            <td><button name="action" value="change">Изменить</button>
-            <br><button name="action" value="delete">Удалить</button>
-            <br><a href="{{point_link}}&scheme_id={{row.id}}"> Установить точки</a></td>
+            <td><button name="action" value="change">{{text_action_change}}</button>
+            <br><button name="action" value="delete">{{text_action_remove}}</button>
+            <br><a href="{{point_link}}&scheme_id={{row.id}}">{{text_action_set_points}}</a></td>
           </tr>
           </form>
           {% endfor %}
@@ -67,18 +65,18 @@
         <form method = "POST" enctype = "multipart/form-data">
             <td>#</td>
             <td><input type="file" name = "scheme_image"></td>
-            <td><input name = "scheme_name" placeholder = "Название схемы"></td>
+            <td><input name = "scheme_name" placeholder = "{{scheme_name}}"></td>
             <td> <select name = "scheme_cat">{% for cat in cats %}
             <option value = "{{cat.id}}">{{cat.name}}</option>
             {% endfor %} </select></td>
             <td>
                <select name = "scheme_engine">
-                <option value = "0" selected>Универсальный</option>
+                <option value = "0" selected>{{universal_engine}}</option>
                 <option value = "1">3 СХ</option>
                 <option value = "2">4 СХ</option>
                 </select>
             </td>
-            <td><button name="action" value="add">Добавить схему</button></td>
+            <td><button name="action" value="add">{{text_action_add}}</button></td>
         </form>
           </tr>
         </table>
