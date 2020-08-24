@@ -4,7 +4,7 @@ class ControllerExtensionModuleManudesc extends Controller
     public function install()
     {
         $this->load->model('extension/module/manudesc');
-        if ($this->model_extension_module_manudesc->col_exist())
+        if ($this->model_extension_module_manudesc->col_exist() == FALSE)
             $this->model_extension_module_manudesc->update_db_table();
         $post['module_manudesc_status'] = 1;
         $this->load->model('setting/setting');
