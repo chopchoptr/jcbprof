@@ -378,8 +378,15 @@ footer h5 {
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
-.pagination {
-	margin: 0;
+.pagination li span {
+    background: #FCB026!important;
+    color: black!important;
+    margin: 0;
+    border-color: black!important;
+}
+.pagination a{
+    color: black!important;
+    border-color: black!important;
 }
 /* buttons */
 .buttons {
@@ -508,10 +515,9 @@ footer h5 {
 	padding: 8px 12px;
 }
 .list-group a.active, .list-group a.active:hover, .list-group a:hover {
-	color: #444444;
-	background: #eeeeee;
-	border: 1px solid #DDDDDD;
-	text-shadow: 0 1px 0 #FFF;
+	color: black;
+	background: #FCB026!important;
+	border: none!important;
 }
 /* carousel */
 .carousel-caption {
@@ -4940,6 +4946,7 @@ legend {
 }
 
 @media (max-width: 990px) {
-    .logoAdS{
+    .header-top-left{
+        font-size: px;
     }
 }
