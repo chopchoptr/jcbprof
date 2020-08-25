@@ -15,13 +15,13 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse menucvet ">
       <div class="contactinfo">
         <ul class="nav navbar-nav">
-          {% for category in categories %}
           <li><a href="{{ home }}" class="menu__item">Главная</a></li>
-          <li><a href="{{ catalogs }}" class="menu__item">Запчасти</a></li>
-          <li><a href="{{ contact }}" class="menu__item">О нас</a></li>
-          <li><a href="{{  blog  }}" class="menu__item">Блог</a></li>
-          <li><a href="{{  blog  }}" class="menu__item">Поставщики</a></li>
+         {% for category in categories %}
+           <li><a href="{{ category.href }}" class="menu__item">{{category.name}}</a></li>
           {% endfor %}
+          <li><a href="{{ contact }}" class="menu__item">О нас</a></li>
+          <li><a href="{{  blog  }}" class="menu__item">Поставщики</a></li>
+          
 
         </ul>
       </div>
