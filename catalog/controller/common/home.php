@@ -16,6 +16,7 @@ class ControllerCommonHome extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 		$data['information'] = $this->load->controller('information/information');
+		$data['catalogs'] = $this->load->controller('category/product', 'path=59');
 
 		$this->response->setOutput($this->load->view('common/home', $data));
 	}
