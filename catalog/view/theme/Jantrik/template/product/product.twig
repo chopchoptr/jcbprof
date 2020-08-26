@@ -122,6 +122,9 @@
           </div>
           <h1>{{ heading_title }}</h1>
           <ul class="list-unstyled">
+            {% if sku %}
+            <li> Артикул: {{sku}} </li>
+            {% endif %}
             {% if manufacturer %}
             <li>{{ text_manufacturer }} <a href="{{ manufacturers }}">{{ manufacturer }}</a></li>
             {% endif %}

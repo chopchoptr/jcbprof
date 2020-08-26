@@ -6,20 +6,20 @@
     {% endfor %}
   </ul>
   <div class="row">{{ column_left }}
-    {% if column_left and column_right %}
-    {% set class = 'col-sm-6' %}
-    {% elseif column_left or column_right %}
-    {% set class = 'col-sm-9' %}
-    {% else %}
-    {% set class = 'col-sm-12' %}
-    {% endif %}
+      {% if column_left and column_right %}
+      {% set class = 'col-sm-6' %}
+      {% elseif column_left or column_right %}
+      {% set class = 'col-sm-9' %}
+      {% else %}
+      {% set class = 'col-sm-12' %}
+      {% endif %}
     <div id="content" class="{{ class }}">{{ content_top }}
       <h2>{{ heading_title }}</h2>
-      {# {% if thumb or description %}
+      {% if thumb or description %}
       <div class="row"> {% if thumb %}
         <div class="col-sm-2"><img src="{{ thumb }}" alt="{{ heading_title }}" title="{{ heading_title }}" class="img-thumbnail" /></div>
         {% endif %}
-        {% if description %}
+        {# {% if description %}
         <div class="col-sm-10">{{ description }}</div>
         {% endif %}</div> #}
       <hr>
@@ -133,7 +133,12 @@
             <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>
             <div class="caption">
               <h4><a href="{{ product.href }}">{{ product.name }}</a></h4>
-              {# <p>{{ product.description }}</p> #}
+              {# ЭТО НАЧАЛО БЛОКА ДЛЯ ВЫВОДА СПЕЦАТРИБУТОВ ПО ТЗ #}
+                {# <p>{{ product.description }}</p> #}
+                <p>Артикул: {{product.sku}}</p>
+                <p>Кросс-номера: {{product.attribute_groups}}</p>
+                <p>Производитель: {{product.manufacturer}}</p>
+              {# ЭТО КОНЕЦ БЛОКА ДЛЯ ВЫВОДА СПЕЦАТРИБУТОВ ПО ТЗ #}
             </div>
             <div class="button-group">
               <button class="buttonK" type="button">{{ product.price }}</button>
