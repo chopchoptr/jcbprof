@@ -32,7 +32,10 @@
        </div>
        {% if scheme %}
            <div class = "col-md-6">
-        <canvas  id = "canv-1" height='320' width='480' style = "border:1px solid black; background:url('https://wikers.ru/wp-content/uploads/2017/06/bc-kshp.jpg'); background-repeat:no-repeat;"> </canvas>
+        <canvas  id = "canv-1" height='320' width='480' style = "background:url('/image/scheme/{{scheme.image}}'); 
+    background-repeat:no-repeat;
+	background-size: contain;
+  	background-position: center; " class = "JCB-src" > </canvas>
      </div>
    <div class = "col-md-6">
     <table border = "1" id = "point-form" width = "100%">
