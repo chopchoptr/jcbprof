@@ -4925,6 +4925,10 @@ legend {
     width: 100%;
 }
 
+.mh40{
+    max-height: 40px!important;
+}
+
 .navbar-collapse{
     margin: 0px auto;
     width: 600px!important;
@@ -4939,15 +4943,27 @@ legend {
 }
 
 
-@media (max-width: 1420px) {
+@media (max-width: 1361px) {
 	.header-top-left {
-        font-size: 16px;
+        font-size: 14px;
 	}
 }
 
-@media (max-width: 990px) {
+@media (max-width: 766px) {
+    .form-control .input-lg{
+        max-width: 700px!important;
+    }
+}
+
+@media (max-width: 992px) {
+    .logo{
+        display: none;
+    }
+    .adress-hidden{
+        display: none;
+    }
     .header-top-left{
-        font-size: px;
+        padding-top: 8px!important;
     }
 }
 /* SCHEME STYLE */
