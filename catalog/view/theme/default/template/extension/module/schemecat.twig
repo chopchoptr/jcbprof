@@ -1,0 +1,15 @@
+    <h1>{{ heading_title }}</h1>
+    <div class = "row">
+     {% for cat in cats %}   
+        <div class = "col-sm-4 text-center" style="border:1px solid black;">
+            <div class = "col-xs-12">
+            <img src="/image/scheme/{{cat.image}}" >
+            <h3>{{cat.name}}</h3>
+            {{text_link}}
+            </div>
+            <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=1&sc_cat_id={{cat.id}}">3CX</a>
+            <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=2&sc_cat_id={{cat.id}}">4CX</a>
+            <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=0&sc_cat_id={{cat.id}}">Универсал</a>
+        </div>
+    {% endfor %}
+    </div>

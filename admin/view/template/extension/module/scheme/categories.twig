@@ -32,19 +32,22 @@
       <table border = "1" width = "100%">
         <tr>
             <th>id</th>
+            <th>изображение</th>
             <th>{{scheme_cat_name}}</th>
             <th>{{text_action}}</th>
         </tr>
       {% for row in rows %}
       <form method = "POST">
         <td><input type="hidden" name = "id" value = "{{row.id}}"> {{row.id}}</td>
+        <td><img src = "/image/scheme/{{row.image}}" width = "150px"></td>
         <td><input  name = "name" value = "{{row.name}}"></input></td>
         <td><button name = "action" value = "change">{{text_action_change}}</button><button name = "action" value = "delete">{{text_action_remove}}</button></td>
         </tr>
       </form>
       {% endfor %}
-    <form method = "POST">
+    <form method = "POST" enctype = "multipart/form-data">
         <td>#</td>
+         <td><input type="file" name = "category_image"></td>
         <td><input name = "name" placeholder = "{{new_cat_placeholder}}"></input></td>
         <td><button name = "action" value = "add">{{text_action_add}}</button></td>
       </form>
