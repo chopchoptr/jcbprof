@@ -1,6 +1,23 @@
 <?php
 
 class ControllerExtensionModuleMatrositeLooked extends Controller {
+	
+	private function get_attribute_by_id($arrays, $gr_attr, $attr)
+	{
+		$data = [];
+		foreach ($arrays as $array)
+			if ($array['name'] == $gr_attr)
+			{
+				$data = $array['attribute'];
+				break;
+			}
+		foreach ($data as $elem) {
+			if($elem['name'] == $attr)
+				return($elem['text']);
+		}
+		return("");
+	}
+
 	public function index() {
 		
 		$this->load->model('setting/setting');
@@ -85,6 +102,9 @@ class ControllerExtensionModuleMatrositeLooked extends Controller {
 					}
 
 					$data['products'][] = array(
+						'manufacturer' => $product_info['manufacturer'],
+						'sku' 			=> $product_info['sku'],
+						'attribute_groups' => $this->get_attribute_by_id($this->model_catalog_product->getProductAttributes($product_info['product_id']), 'Поисковые параметры', 'кросс-номера'),
 						'product_id'  => $product_info['product_id'],
 						'thumb'       => $image,
 						'name'        => $product_info['name'],
