@@ -7,7 +7,8 @@ class ModelExtensionModuleScheme extends Model
     {
         $this->db->query("CREATE TABLE IF NOT EXISTS `oc_scheme_categories` (
             `id` int(11) NOT NULL primary key AUTO_INCREMENT,
-            `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+            `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
         
         $this->db->query("CREATE TABLE IF NOT EXISTS `oc_scheme` (
@@ -52,8 +53,14 @@ class ModelExtensionModuleScheme extends Model
     public function add_category()
     {
         $name = $this->defend_str($this->request->post['name']);
+        $image = $this->upload_image($_FILES["category_image"]);
         if(!empty($name))
-            $this->db->query("INSERT INTO `oc_scheme_categories` (`name`) VALUES ('".$name."')");
+        {
+            if (isset($_FILES["category_image"]))
+                $this->db->query("INSERT INTO `oc_scheme_categories` (`name`, `image`) VALUES ('".$name."', '". $image ."')");
+            else
+                $this->db->query("INSERT INTO `oc_scheme_categories` (`name`) VALUES ('".$name."')");
+        }
     }
 
     public function get_category()
@@ -71,7 +78,13 @@ class ModelExtensionModuleScheme extends Model
 
     public function delete_category()
     {
-        //TODO: change schemes WHERE cat id == delete cat id
+        $image = $this->db->query("SELECT `image` from `oc_scheme_categories` WHERE `id` = ".$this->request->post['id']);
+        $file = $image->rows[0]['image'];
+        if (!empty($image))
+        {
+            $file = DIR_IMAGE."scheme/".$file;
+            unlink($file);
+        }
         $this->db->query("DELETE FROM `oc_scheme_categories` WHERE `id` = ". $this->request->post['id']);
     }
 

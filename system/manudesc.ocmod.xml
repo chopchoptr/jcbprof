@@ -13,8 +13,8 @@
     </search>
     <add position="after">             <!-- Добавление модификации (после найденного кода) -->
 	<![CDATA[
-		$data['desc'] = $manufacturer_info['desc'];
-		$data['link'] = $manufacturer_info['link'];]]>
+		$data['desc'] = isset($manufacturer_info['desc']) ? $manufacturer_info['desc'] : "";
+		$data['link'] = isset($manufacturer_info['link']) ? $manufacturer_info['link'] : "";]]>
     </add>
   </operation>
 </file>
