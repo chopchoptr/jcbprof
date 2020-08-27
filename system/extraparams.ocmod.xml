@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <modification>
-  <name>Extra params for product</name>                <!-- Название модификатора -->
+  <name>Extra params for product in categories</name>                <!-- Название модификатора -->
   <code>ExtraParams</code>                <!-- Уникальный код модификатора -->
   <version>1.0</version>           <!-- Версия -->
   <author>Waeron-g</author>            <!-- Автор -->

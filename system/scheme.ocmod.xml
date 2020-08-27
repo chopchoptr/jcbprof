@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <modification>
-  <name>Доболнение схем JCB</name>                <!-- Название модификатора -->
+  <name>Дополнение схем JCB</name>                <!-- Название модификатора -->
   <code>Scheme</code>                <!-- Уникальный код модификатора -->
   <version>1.0</version>           <!-- Версия -->
   <author>Waeron-g</author>            <!-- Автор -->
