@@ -63,7 +63,7 @@ $_['entry_address_2']                = 'Адрес 2';
 $_['entry_postcode']                 = 'Индекс';
 $_['entry_city']                     = 'Город';
 $_['entry_country']                  = 'Страна';
-$_['entry_zone']                     = 'Регион / Область';
+$_['entry_zone']                     = 'Область ';
 $_['entry_newsletter']               = 'Я хочу подписаться на Новости %s .';
 $_['entry_shipping']                 = 'Мой адрес доставки совпадает с платежным.';
 
