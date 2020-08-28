@@ -1,5 +1,7 @@
 <article class="post-layout post-grid">
     <div class="post-thumb">
+    <div class="row">
+    <div class="img-blog-center col-sm-2">
         <div class="image">
             <a href="{{post.href}}">
                 {% if access_limit %}
@@ -8,7 +10,9 @@
                 <img src="{{post.thumb}}" alt="{{post.image_alt}}" title="{{post.image_title}}" class="img-responsive"/>
             </a>
         </div>
+    </div>
     
+    <div class="col-sm-10">
         <div class="post-thumb-heading">            
             {% if setting.post_thumb.category_label_display %}
                 <ul class="category list-unstyled">
@@ -57,6 +61,7 @@
             {% if (setting.post_thumb.views_display and post.views) %}<span class="view"><i class="fa fa-eye"></i> {{text_views}} {{post.views}}</span>{% endif %}
             {% if setting.post_thumb.read_more_display %}<a href="{{post.href}}" class="read-more pull-right">{{text_read_more}}</a>{% endif %}
         </div>
-    
+        </div>
+    </div>
     </div>
 </article>
