@@ -4839,6 +4839,11 @@ legend {
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Параметры тени */
     border-radius: 20px;
 }
+
+.BlockCenterCallBack{
+    display: flex;
+    justify-content: center;
+}
 .callbackform input{
     margin-left: 5%;
     min-height: 35px;
