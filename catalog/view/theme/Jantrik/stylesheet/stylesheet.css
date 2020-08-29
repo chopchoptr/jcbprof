@@ -155,7 +155,7 @@ div.required .control-label:before {
 }
 /* cart */
 #cart {
-	margin-bottom: 10px;
+	
 }
 #cart > .btn {
 	font-size: 12px;
@@ -269,14 +269,10 @@ div.required .control-label:before {
 	color: #FFF;
 	padding: 2px 18px;
 	float: right;
-	background-color: #229ac8;
-	background-image: linear-gradient(to bottom, #23a1d1, #1f90bb);
-	background-repeat: repeat-x;
-	border-color: #1f90bb #1f90bb #145e7a;
 }
 #menu .btn-navbar:hover, #menu .btn-navbar:focus, #menu .btn-navbar:active, #menu .btn-navbar.disabled, #menu .btn-navbar[disabled] {
 	color: #ffffff;
-	background-color: #229ac8;
+	background-color: black;
 }
 @media (min-width: 768px) {
 	#menu .dropdown:hover .dropdown-menu {
@@ -4981,4 +4977,14 @@ legend {
 
 .img-blog-center{
     padding-top: 5%;
+}
+.logoHeaderSmall{
+    padding-top: 7px;
+    max-width: 200px;
+}
+
+@media (min-width: 992px) {
+    .logoHeaderSmall{
+        display: none;
+    }
 }
