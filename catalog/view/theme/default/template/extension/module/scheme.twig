@@ -24,7 +24,7 @@
        </form>
        <div class = 'col-md-12'>
        {% for scheme in schemes %}
-       <div class = 'col-md-3 scheme_block' {% if sc_id == scheme.id %} style = "border: 2px solid black;" {% endif %}>
+       <div class = 'col-md-3 scheme_block' {% if sc_id == scheme.id %} style = "border: 2px solid green;" {% endif %}>
             <a href = "{{cat_link}}&scheme_id={{scheme.id}}"><img width = "80%" src = "/image/scheme/{{scheme.image}}">
             <h4>{{scheme.name}}</h4></a>
         </div>

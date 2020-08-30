@@ -4995,10 +4995,25 @@ legend {
 }
 
 .scheme_block{
-    min-height: 300px!important;
     overflow-x: hidden;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
 
 .scheme_block img{
     max-width: 100%!important;
+}
+
+.widthart{
+    min-height: 300px!important;
+}
+
+.scheme_page_block{
+    padding: 10px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.margintop_SCHEME{
+    margin-top: 30px!important;
 }
