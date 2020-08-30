@@ -4993,3 +4993,12 @@ legend {
         display: none;
     }
 }
+
+.scheme_block{
+    min-height: 300px!important;
+    overflow-x: hidden;
+}
+
+.scheme_block img{
+    max-width: 100%!important;
+}

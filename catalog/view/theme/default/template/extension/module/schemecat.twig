@@ -1,15 +1,19 @@
     <h1>{{ heading_title }}</h1>
     <div class = "row">
      {% for cat in cats %}   
-        <div class = "col-sm-3 text-center" style="border:1px solid black;">
+        <div class = "col-lg-3 col-md-3 col-sm-6 col-xs-12 text-center product-layout">
+        <div class="product-thumb transition scheme_block">
             <div class = "col-xs-12">
             <img src="/image/scheme/{{cat.image}}" >
             <h3>{{cat.name}}</h3>
             {{text_link}}
             </div>
+            <div class = "row kal">
             <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=1&sc_cat_id={{cat.id}}">3CX</a>
             <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=2&sc_cat_id={{cat.id}}">4CX</a>
             <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=0&sc_cat_id={{cat.id}}">Универсал</a>
+            </div>
+        </div>
         </div>
     {% endfor %}
     </div>
