@@ -114,7 +114,7 @@ class ModelExtensionModuleScheme extends Model
         $engine = (int) $this->request->post['scheme_engine'] >= 0 ? $this->request->post['scheme_engine']  : 0 ;
         $cat = (int) $this->request->post['scheme_cat'] >= 0 ? $this->request->post['scheme_cat']  : 0 ;
         if (!empty($name))
-        $query = $this->db->query("UPDATE `oc_scheme` SET `name` = '".$name."', `engine` = ". $engine .", `category_id` ". $cat ." WHERE `id` = ". $this->request->post['id']);
+        $query = $this->db->query("UPDATE `oc_scheme` SET `name` = '".$name."', `engine` = ". $engine .", `category_id` = ". $cat ." WHERE `id` = ". $this->request->post['id']);
     }
 
     public function delete_scheme()
