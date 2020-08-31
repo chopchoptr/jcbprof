@@ -32,7 +32,7 @@
 </style>
 <div class="container">
     {% if breadcrumbs %}
-    <ul class="breadcrumb">
+    <ul class="breadcrumb hidden-xs">
         {% for breadcrumb in breadcrumbs %}
             {% if breadcrumb.href and not breadcrumb.current %}
             <li><a href="{{ breadcrumb.href }}">
