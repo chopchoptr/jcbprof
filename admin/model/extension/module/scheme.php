@@ -8,7 +8,8 @@ class ModelExtensionModuleScheme extends Model
         $this->db->query("CREATE TABLE IF NOT EXISTS `oc_scheme_categories` (
             `id` int(11) NOT NULL primary key AUTO_INCREMENT,
             `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-            `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+            `image` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+            `cat_id` int(11) NOT NULL
             ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci");
         
         $this->db->query("CREATE TABLE IF NOT EXISTS `oc_scheme` (
@@ -54,12 +55,13 @@ class ModelExtensionModuleScheme extends Model
     {
         $name = $this->defend_str($this->request->post['name']);
         $image = $this->upload_image($_FILES["category_image"]);
+        $cat_id = isset($this->request->post['prod_cat']) ? $this->request->post['prod_cat'] : 0;
         if(!empty($name))
         {
             if (isset($_FILES["category_image"]))
-                $this->db->query("INSERT INTO `oc_scheme_categories` (`name`, `image`) VALUES ('".$name."', '". $image ."')");
+                $this->db->query("INSERT INTO `oc_scheme_categories` (`name`, `image`, `cat_id`) VALUES ('".$name."', '". $image ."', ". $cat_id .")");
             else
-                $this->db->query("INSERT INTO `oc_scheme_categories` (`name`) VALUES ('".$name."')");
+                $this->db->query("INSERT INTO `oc_scheme_categories` (`name`, `cat_id`) VALUES ('".$name."', ". $cat_id .")");
         }
     }
 
@@ -72,8 +74,9 @@ class ModelExtensionModuleScheme extends Model
     public function change_category()
     {
         $name = $this->defend_str($this->request->post['name']);
+        $cat_id = isset($this->request->post['prod_cat']) ? $this->request->post['prod_cat'] : 0;
         if(!empty($name))
-            $query = $this->db->query("UPDATE `oc_scheme_categories` SET `name` = '".$name."' WHERE `id` = ". $this->request->post['id']);
+            $query = $this->db->query("UPDATE `oc_scheme_categories` SET `name` = '".$name."', `cat_id` = ". $cat_id ." WHERE `id` = ". $this->request->post['id']);
     }
 
     public function delete_category()

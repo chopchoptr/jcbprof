@@ -25,6 +25,7 @@ class ControllerExtensionModuleScheme extends Controller
     {
         //prepare module data
         $this->load->model('extension/module/scheme');
+        $this->load->model('catalog/category');
         $data = array();
         $data['options_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&type=module');
         $data['categories_link'] = $this->url->link('extension/module/scheme',  'user_token=' . $this->session->data['user_token'] . '&modpage=categories');
@@ -52,6 +53,7 @@ class ControllerExtensionModuleScheme extends Controller
                     $this->response->redirect( $this->url->link('extension/module/scheme', 'user_token=' . $this->session->data['user_token'] . '&modpage=categories', true));
                 }
                 $data['rows'] = $this->model_extension_module_scheme->get_category();
+                $data['cats'] = $this->model_catalog_category->getCategories();
                 $this->response->setOutput($this->load->view('extension/module/scheme/categories', $data));
             }
             //schemes page

@@ -17,6 +17,12 @@ class ModelExtensionModuleScheme extends Model
         return($query->rows); 
     }
 
+    public function get_cat_id($cat)
+    {
+        $query = $this->db->query("SELECT `cat_id` FROM `oc_scheme_categories` WHERE `id` = ". $cat);
+        return($query->rows[0]['cat_id']); 
+    }
+
     public function get_scheme($id)
     {
         $query = $this->db->query("SELECT * FROM `oc_scheme` WHERE `id` = ". $id);

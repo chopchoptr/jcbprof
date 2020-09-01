@@ -5018,7 +5018,13 @@ legend {
     margin-top: 30px!important;
 }
 
+<<<<<<< HEAD
 .sdf{
     background: black;
     height: 40px;
+=======
+.navbar-header>.btn:focus
+{  
+    border: 0px;
+>>>>>>> 4a7c76883d2e94d7211fb54699fc18bd54125071
 }
