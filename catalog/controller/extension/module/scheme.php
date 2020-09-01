@@ -1,6 +1,22 @@
 <?php
 class ControllerExtensionModuleScheme extends Controller
 {
+    private function get_attribute_by_id($arrays, $gr_attr, $attr)
+    {
+    $data = [];
+    foreach ($arrays as $array)
+        if ($array['name'] == $gr_attr)
+        {
+            $data = $array['attribute'];
+            break;
+        }
+    foreach ($data as $elem) {
+        if($elem['name'] == $attr)
+            return($elem['text']);
+    }
+    return("");
+}
+
     public function index()
     {
         $this->load->model('extension/module/scheme');
@@ -113,6 +129,8 @@ class ControllerExtensionModuleScheme extends Controller
             }
             $data['products'][] = array(
                 'product_id'  => $result['product_id'],
+                'sku'			=> $result['sku'],
+                'attribute_groups'	 => $this->get_attribute_by_id($this->model_catalog_product->getProductAttributes($result['product_id']), 'Поисковые параметры', 'кросс-номера'),
                 'thumb'       => $image,
                 'name'        => $result['name'],
                 'description' => utf8_substr(trim(strip_tags(html_entity_decode($result['description'], ENT_QUOTES, 'UTF-8'))), 0, $this->config->get('theme_' . $this->config->get('config_theme') . '_product_description_length')) . '..',
