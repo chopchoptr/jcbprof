@@ -5017,8 +5017,3 @@ legend {
 .margintop_SCHEME{
     margin-top: 30px!important;
 }
-
-.navbar-header>.btn:focus
-{  
-    border: 0px;
-}

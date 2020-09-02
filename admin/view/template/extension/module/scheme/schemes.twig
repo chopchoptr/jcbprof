@@ -49,9 +49,9 @@
             {% endfor %} </select></td>
             <td>
             <select name = "scheme_engine">
-                <option value = "0" {% if row.engine == 0 %} checked {% endif %}>{{universal_engine}}</option>
-                <option value = "1" {% if row.engine == 1 %} checked {% endif %}>3 СХ</option>
-                <option value = "2" {% if row.engine == 2 %} checked {% endif %}>4 СХ</option>
+                <option value = "0" {% if row.engine == 0 %} selected {% endif %}>{{universal_engine}}</option>
+                <option value = "1" {% if row.engine == 1 %} selected {% endif %}>3 СХ</option>
+                <option value = "2" {% if row.engine == 2 %} selected {% endif %}>4 СХ</option>
                 </select>
             </td>
             <td><button name="action" value="change">{{text_action_change}}</button>
