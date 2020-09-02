@@ -1,8 +1,8 @@
 
 var canv = document.getElementById("canv");
 var ctx  = canv.getContext('2d');
-ctx.width = 300;
-ctx.height = 455;
+ctx.width = 768;
+ctx.height = 480;
 var points = [];
 var i = 0;
 write_elements(ctx);
@@ -11,18 +11,18 @@ write_elements(ctx);
 function draw_point(i, x, y, ctx)
 {
     var circle = new Path2D();
-    circle.arc(x, y, 10, 0, 2 * Math.PI); //black circle
-    ctx.fill(circle);
     ctx.fillStyle="#fff";
-    circle.arc(x, y, 8, 0, 2 * Math.PI); // white circle
+    circle.arc(x, y, 16, 0, 2 * Math.PI); // white circle
     ctx.fill(circle);
     ctx.fillStyle="#000";
+    ctx.stroke(circle);
+    ctx.font = "18px Arial";
     if (i < 10) //black text on circle
-        ctx.fillText(i, x-3, y+3);
+        ctx.fillText(i, x-5, y+7);
     else if (i < 100)
-        ctx.fillText(i, x-5, y+3);
+        ctx.fillText(i, x-10, y+7);
     else
-        ctx.fillText(i, x-9, y+3);
+        ctx.fillText(i, x-15, y+7);
 }
 
 //draw cells in tablerow
