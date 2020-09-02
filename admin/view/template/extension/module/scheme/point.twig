@@ -44,7 +44,7 @@
             <td>
         {% set tmp = tmp + 1 %}
         {% endif %}
-              <label><input type = "checkbox" {% if flt.filter_id in point_flt %} checked {% endif %} name = "filter_id[]" value = "{{ flt.filter_id}}">{{flt.filter}} {{tmp}}</label><br>
+              <label><input type = "checkbox" {% if flt.filter_id in point_flt %} checked {% endif %} name = "filter_id[]" value = "{{ flt.filter_id}}">{{flt.filter}}</label><br>
         {% if flt.filter_group_id > tmp %}
             </td>
           </tr>
