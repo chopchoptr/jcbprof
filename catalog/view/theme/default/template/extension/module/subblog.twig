@@ -1,0 +1,14 @@
+<div class = "col-md-12">
+<h2> {{heading_title}}</h2>
+{% for post in posts %}
+<div class = "col-md-3">
+<div class = "col-md-12 text-center">
+<img class = "col-md-12" src = "/image/{{post.image}}">
+</div>
+<div class = "col-md-12 text-center">
+    {{post.title}}
+<a class="btn btn-warning" href = "{{post.link}}">{{read_post}}</a>
+</div>
+</div>
+{% endfor %}
+</div>
