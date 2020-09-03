@@ -12,7 +12,7 @@ class ModelExtensionModuleSubblog extends Model
                 "title" => $query->row['title'],
                 "desc"  => $query->row['short_description'],
                 "image" => $post['image'],
-                "link"  => "/?route=route=extension/d_blog_module/post&post_id=".$post['post_id'],
+                "link"  => "/?route=extension/d_blog_module/post&post_id=".$post['post_id'],
             ];
         }
         return($posts['posts']); 
