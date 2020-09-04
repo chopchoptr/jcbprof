@@ -35,7 +35,7 @@ class ControllerExtensionModuleScheme extends Controller
         );
         $data['cats'] = $this->model_extension_module_scheme->get_categories();
         // load filtered schemes
-        if (isset($_GET['engine']))
+        if (isset($_GET['engine'] && isset($_GET['sc_cat_id'])))
         {
            $data['engine'] = $_GET['engine'];
            $data['sc_cat_id'] = $_GET['sc_cat_id'];
