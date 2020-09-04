@@ -437,6 +437,7 @@ footer h5 {
     color: white!important;
 }
 .btn-warning {
+    margin: 0px!important;
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #faa732;
@@ -5021,4 +5022,31 @@ legend {
 
 .margintop_SCHEME{
     margin-top: 30px!important;
+}
+
+.btnEnginePanel{
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.btnEngineType:hover{
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.btnEngineTypeactive{
+    background: black;
+    color: white!important;
+}
+
+.btnEngineTypeactive:after{
+    content: "";
+    border: 1px solid white;
+    border-radius: 0 5px 5px 0;
+}
+
+.active-line{
+    background: black;
+    color: white;
 }
