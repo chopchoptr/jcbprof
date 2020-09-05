@@ -5026,24 +5026,21 @@ legend {
 
 .btnEnginePanel{
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .btnEngineType:hover{
-    background: black;
-    color: white;
-    border-radius: 5px;
+    color: black!important;
 }
 
 .btnEngineTypeactive{
     background: black;
     color: white!important;
+    border-radius: 10px;
 }
 
-.btnEngineTypeactive:after{
-    content: "";
-    border: 1px solid white;
-    border-radius: 0 5px 5px 0;
+.btnEngineTypeactive a{
+    color: white!important;
 }
 
 .active-line{
