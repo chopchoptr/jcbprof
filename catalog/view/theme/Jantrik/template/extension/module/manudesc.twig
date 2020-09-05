@@ -5,14 +5,16 @@
     <h1>ПРОИЗВОДИТЕЛИ</h1>
     {% for manufacturer in manufacturers %}
     <div class = "col-xs-12" id = "manufacturer-{{manufacturer.manufacturer_id}}" style = "border: 1px solid black;">
-    <div class = "col-xs-12 col-md-2 text-center">
-     <img src = "/image/{{manufacturer.image}}">
-     <h1>{{manufacturer.name}}</h1>
-    </div>
+      <div class = "col-xs-12 col-md-3 text-center">
+        <img class="img-postavka" src = "/image/{{manufacturer.image}}">
+        <h1>{{manufacturer.name}}</h1>
+      </div>
     <div class = "col-md-9">
     <p>{{manufacturer.desc}}</p>
-    <a href = {{manufacturer.link}} class="btn">САЙТ ПРОИЗВОДИТЕЛЯ</a>
-    <a href = "/?route=product/manufacturer/info&manufacturer_id={{manufacturer.manufacturer_id}}" class="btn">ТОВАРЫ ПРОИЗВОДИТЕЛЯ</a>
+      
+      <a href = {{manufacturer.link}} class="btn"><div class="BTN-siteDel">САЙТ ПОСТАВЩИКА</div></a>
+      <a href = "/?route=product/manufacturer/info&manufacturer_id={{manufacturer.manufacturer_id}}"><div class="BTN-siteDel1">ТОВАРЫ ПОСТАВЩИКА</div></a>
+      
     </div>
     </div>
     
