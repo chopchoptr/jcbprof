@@ -9,9 +9,15 @@
             {{text_link}}
             </div>
             <div class = "row">
+            {% if cat.count > 0 %}
             <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=1&sc_cat_id={{cat.id}}">3CX</a>
             <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=2&sc_cat_id={{cat.id}}">4CX</a>
             <a class="btn btn-warning" href ="?route=extension/module/scheme&engine=0&sc_cat_id={{cat.id}}">Универсал</a>
+            {% else %}
+             <a class="btn btn-warning" href ="?route=product/category&path={{cat.cat_id}}">3CX</a>
+            <a class="btn btn-warning" href ="?route=product/category&path={{cat.cat_id}}">4CX</a>
+            <a class="btn btn-warning" href ="?route=product/category&path={{cat.cat_id}}">Универсал</a>
+            {% endif %}
             </div>
         </div>
         </div>

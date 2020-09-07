@@ -12,17 +12,17 @@ function draw_point(i, x, y, ctx)
 {
     var circle = new Path2D();
     ctx.fillStyle="#fff";
-    circle.arc(x, y, 16, 0, 2 * Math.PI); // white circle
+    circle.arc(x, y, 12, 0, 2 * Math.PI); // white circle
     ctx.fill(circle);
     ctx.fillStyle="#000";
     ctx.stroke(circle);
-    ctx.font = "18px Arial";
+    ctx.font = "14px Arial";
     if (i < 10) //black text on circle
-        ctx.fillText(i, x-5, y+7);
+        ctx.fillText(i, x-4, y+5);
     else if (i < 100)
-        ctx.fillText(i, x-10, y+7);
+        ctx.fillText(i, x-8, y+5);
     else
-        ctx.fillText(i, x-15, y+7);
+        ctx.fillText(i, x-12, y+5);
 }
 
 //draw cells in tablerow

@@ -54,12 +54,14 @@ class ModelExtensionModuleScheme extends Model
     public function add_category()
     {
         $name = $this->defend_str($this->request->post['name']);
-        $image = $this->upload_image($_FILES["category_image"]);
         $cat_id = isset($this->request->post['prod_cat']) ? $this->request->post['prod_cat'] : 0;
         if(!empty($name))
         {
-            if (isset($_FILES["category_image"]))
+            if ($_FILES["category_image"]['error'] == 0)
+            {
+                $image = $this->upload_image($_FILES["category_image"]);
                 $this->db->query("INSERT INTO `oc_scheme_categories` (`name`, `image`, `cat_id`) VALUES ('".$name."', '". $image ."', ". $cat_id .")");
+            }
             else
                 $this->db->query("INSERT INTO `oc_scheme_categories` (`name`, `cat_id`) VALUES ('".$name."', ". $cat_id .")");
         }
@@ -73,10 +75,23 @@ class ModelExtensionModuleScheme extends Model
 
     public function change_category()
     {
+        $id = $this->request->post['id'];
         $name = $this->defend_str($this->request->post['name']);
         $cat_id = isset($this->request->post['prod_cat']) ? $this->request->post['prod_cat'] : 0;
-        if(!empty($name))
-            $query = $this->db->query("UPDATE `oc_scheme_categories` SET `name` = '".$name."', `cat_id` = ". $cat_id ." WHERE `id` = ". $this->request->post['id']);
+        if ($_FILES["category_image"]['error'] == 0)
+        {
+            $image = $this->db->query("SELECT `image` from `oc_scheme_categories` WHERE `id` = ".$this->request->post['id']);
+            $file = $image->rows[0]['image'];
+            if (!empty($image))
+            {
+                $file = DIR_IMAGE."scheme/".$file;
+                unlink($file);
+            }
+            $image = $this->upload_image($_FILES["category_image"]);
+            $this->db->query("UPDATE `oc_scheme_categories` SET `name` = '".$name."', `image` = '". $image ."' ,`cat_id` = ". $cat_id ." WHERE `id` = ". $id);
+        }
+        else if(!empty($name))
+           $this->db->query("UPDATE `oc_scheme_categories` SET `name` = '".$name."', `cat_id` = ". $cat_id ." WHERE `id` = ". $id);
     }
 
     public function delete_category()
@@ -97,7 +112,7 @@ class ModelExtensionModuleScheme extends Model
         $name = $this->defend_str($this->request->post['scheme_name']);
         $engine = (int) $this->request->post['scheme_engine'] >= 0 ? $this->request->post['scheme_engine']  : 0 ;
         $cat = (int) $this->request->post['scheme_cat'] >= 0 ? $this->request->post['scheme_cat']  : 0 ;
-        if (!empty($name) && isset($_FILES["scheme_image"]))
+        if (!empty($name) && $_FILES["scheme_image"]['error'] == 0)
         {
             $image = $this->upload_image($_FILES["scheme_image"]);
             if ($image != -1)
@@ -113,11 +128,25 @@ class ModelExtensionModuleScheme extends Model
 
     public function change_scheme()
     {
+        $id = $this->request->post['id'];
         $name = $this->defend_str($this->request->post['scheme_name']);
         $engine = (int) $this->request->post['scheme_engine'] >= 0 ? $this->request->post['scheme_engine']  : 0 ;
         $cat = (int) $this->request->post['scheme_cat'] >= 0 ? $this->request->post['scheme_cat']  : 0 ;
-        if (!empty($name))
-        $query = $this->db->query("UPDATE `oc_scheme` SET `name` = '".$name."', `engine` = ". $engine .", `category_id` = ". $cat ." WHERE `id` = ". $this->request->post['id']);
+        if ($_FILES["scheme_image"]['error'] == 0)
+        {
+            $query = $this->db->query("SELECT `image` from `oc_scheme` WHERE `id` = ". $id);
+            $file = $query->rows[0]['image'];
+            $file = DIR_IMAGE."scheme/".$file;
+            unlink($file);
+            $image = $this->upload_image($_FILES["scheme_image"]);
+            if (!empty($name))
+            $query = $this->db->query("UPDATE `oc_scheme` SET `name` = '".$name."', `engine` = ". $engine .", `image`='". $image ."' , `category_id` = ". $cat ." WHERE `id` = ". $id);    
+        }
+        else
+        {
+            if (!empty($name))
+            $query = $this->db->query("UPDATE `oc_scheme` SET `name` = '".$name."', `engine` = ". $engine .", `category_id` = ". $cat ." WHERE `id` = ". $id);    
+        }
     }
 
     public function delete_scheme()

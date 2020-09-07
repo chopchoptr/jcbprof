@@ -38,9 +38,12 @@
             <th>{{text_action}}</th>
         </tr>
       {% for row in rows %}
-      <form method = "POST">
+      <form method = "POST" enctype = "multipart/form-data">
         <td><input type="hidden" name = "id" value = "{{row.id}}"> {{row.id}}</td>
-        <td><img src = "/image/scheme/{{row.image}}" width = "150px"></td>
+        <td>
+          <img src = "/image/scheme/{{row.image}}" width = "150px">
+          <input type="file" name = "category_image">
+        </td>
         <td><input  name = "name" value = "{{row.name}}"></input></td>
         <td>
           <select name = "prod_cat">

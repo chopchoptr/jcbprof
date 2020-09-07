@@ -39,10 +39,13 @@
             <th>{{text_action}}</th>
           </tr>
            {% for row in rows %}
-           <form method = "POST">
+           <form method = "POST" enctype = "multipart/form-data">
           <tr>
             <td><input type="hidden" name = "id" value = "{{ row.id }}">{{row.id}}</td>
-            <td><img src = "/image/scheme/{{row.image}}" width = "100px"></td>
+            <td>
+              <img src = "/image/scheme/{{row.image}}" width = "100px">
+              <input type="file" name = "scheme_image">
+            </td>
             <td><input name = "scheme_name" value = "{{row.name}}"></td>
             <td> <select name = "scheme_cat">{% for cat in cats %}
             <option value = "{{cat.id}}" {% if cat.id == row.category_id %} selected {% endif %}>{{cat.name}}</option>
