@@ -220,15 +220,19 @@ div.required .control-label:before {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 #menu .dropdown-menu {
-	padding-bottom: 0;
+    padding-bottom: 0;
+    margin-left: -70px;
 }
 #menu .dropdown-inner {
-	display: table;
+    display: table;
+    width: 250px;
 }
 #menu .dropdown-inner ul {
 	display: table-cell;
 }
 #menu .dropdown-inner a {
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
 	min-width: 160px;
 	display: block;
 	padding: 3px 20px;
@@ -238,7 +242,8 @@ div.required .control-label:before {
 	font-size: 12px;
 }
 #menu .dropdown-inner li a:hover {
-	color: #FFFFFF;
+    color: black;
+    background: #FCB026!important;
 }
 #menu .see-all {
 	display: block;
@@ -5049,10 +5054,12 @@ legend {
 
 .img-postavka{
     margin-top: 30px;
-    height: 100px;
+    width: 200px;
 }
 
 .BTN-siteDel{
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 4px;
     color: white;
     background: black;
@@ -5061,10 +5068,12 @@ legend {
 }
 
 .BTN-siteDel1{
+    margin-top: 20px;
+    margin-bottom: 20px;
     padding: 4px;
     display: inline-block;
     background: #FCB026;
-    margin-left: 4px;
+    margin-left: -4px;
     border-right: 1px solid white;
 }
 
@@ -5078,4 +5087,13 @@ legend {
     background: white;
     color: black;
     border-right: 1px solid black;
+}
+
+.fa-shopping-cart{
+    font-size: 20px!important;
+    padding-right: 3px;
+}
+
+#cart-total{
+    color: black!important;
 }
