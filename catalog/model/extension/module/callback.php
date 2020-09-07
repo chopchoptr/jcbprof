@@ -7,7 +7,6 @@ class ModelExtensionModuleCallback extends Model
       if ($this->request->post['action'] == "send_callback")
       {
         $data = $this->request->post;
-        
         if (empty($data['consumer_name']) || empty($data['consumer_tel']))
           return (['id' => 0]);
         date_default_timezone_set("Europe/Moscow");

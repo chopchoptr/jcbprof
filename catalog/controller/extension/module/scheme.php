@@ -35,11 +35,11 @@ class ControllerExtensionModuleScheme extends Controller
         );
         $data['cats'] = $this->model_extension_module_scheme->get_categories();
         // load filtered schemes
-        if (isset($_GET['engine']))
+        if (!empty($_GET['sc_cat_id']))
         {
-           $data['engine'] = $_GET['engine'];
+           $data['engine'] = empty($_GET['engine']) ? 0 : $_GET['engine'];
            $data['sc_cat_id'] = $_GET['sc_cat_id'];
-           $data['schemes'] = $this->model_extension_module_scheme->get_schemes($_GET['sc_cat_id'], $_GET['engine']);
+           $data['schemes'] = $this->model_extension_module_scheme->get_schemes($data['sc_cat_id'], $data['engine']);
            //LOAD PRODUCTS
            $prod_cat = $this->model_extension_module_scheme->get_cat_id($_GET['sc_cat_id']);
            $results = $this->model_catalog_product->getProducts($this->get_filter_data($prod_cat));
