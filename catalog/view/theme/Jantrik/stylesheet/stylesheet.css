@@ -5094,3 +5094,12 @@ legend {
 #cart-total{
     color: black!important;
 }
+
+#column-left{
+    width: 280px;
+    position: absolute;
+}
+
+#common-home{
+    margin-left: 300px;
+}

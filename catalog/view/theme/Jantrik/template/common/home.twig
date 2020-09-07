@@ -1,11 +1,11 @@
 {{ header }}
-
+{{ column_left }}
 <div id="common-home" class="container">
-    <div class="row">{{ column_left }}
+    <div class="row">
         {% if column_left and column_right %}
-        {% set class = 'col-sm-6' %}
+        {% set class = 'col-sm-12' %}
         {% elseif column_left or column_right %}
-        {% set class = 'col-sm-9' %}
+        {% set class = 'col-sm-12' %}
         {% else %}
         {% set class = 'col-sm-12' %}
         {% endif %}
@@ -13,31 +13,6 @@
         {{ column_right }}
     </div>
 </div>
-        <!-- Banner Start -->
-        <div class="upper-banner banner pb-60">
-            <div class="container">
-               <div class="row">
-                   <!-- Single Banner Start -->
-                   <div class="col-sm-6">
-                        <div class="single-banner zoom">
-                            <a href="#"><img src="img/banner/2.png" alt="slider-banner"></a>
-                        </div>
-                    </div>
-                   <!-- Single Banner End -->
-                    <!-- Single Banner Start -->
-                   <div class="col-sm-6">
-                        <div class="single-banner zoom">
-                            <a href="#"><img src="img/banner/2.png" alt="slider-banner"></a>
-                        </div>
-                    </div>
-                   <!-- Single Banner End -->
-               </div>
-               <!-- Row End -->
-            </div>
-            <!-- Container End -->
-        </div>                                
-        <!-- Banner End -->
-        
         <!-- Company Policy Start -->
         <div class="company-policy pb-60">
             <div class="container">
@@ -99,9 +74,6 @@
         </div>
         <!-- Company Policy End -->              
         
-                <div class="group-title">
-                    <h2>Блог</h2>
-                    {{information}}
-                </div>
+                
                  
 {{ footer }}
