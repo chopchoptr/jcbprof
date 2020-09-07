@@ -312,7 +312,10 @@ div.required .control-label:before {
 		border: none;
 		border-radius: 0;
 		color: #fff;
-	}
+    }
+    .pl20{
+        padding-left: 0px;
+    }
 }
 /* content */
 #content {
@@ -441,7 +444,6 @@ footer h5 {
     color: white!important;
 }
 .btn-warning {
-    margin: 0px!important;
 	color: #ffffff;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	background-color: #faa732;
@@ -5021,6 +5023,7 @@ legend {
 
 .margintop_SCHEME{
     margin-top: 30px!important;
+    margin-bottom: 30px;
 }
 
 .btnEnginePanel{
@@ -5046,7 +5049,11 @@ legend {
 
 .active-line{
     background: black;
-    color: white;
+    color: white!important;
+}
+
+.active-line a{
+    color: white!important;
 }
 
 .img-postavka{
@@ -5102,4 +5109,41 @@ legend {
 
 #common-home{
     margin-left: 300px;
+}
+
+@media (max-width: 1660px){
+    #column-left{
+        display: none!important;
+    }
+    #common-home{
+        margin-left: 0px;
+    }
+}
+
+.margintop_SCHEME td{
+    height: 34px;
+}
+
+.margintop_SCHEME a{
+    color: black!important;
+}
+
+.BTNtabs{
+    color: black!important;
+    text-align: center;
+    background: #FCB026!important;
+    width: 15%;
+    border-color: black;
+}
+
+.BTNtabs:hover{
+    background: black!important;
+}
+
+.BTNtabs:hover>a:hover{
+    color: #FCB026!important;
+}
+
+.TMBTNS{
+    margin-bottom: 5px!important;
 }

@@ -22,7 +22,7 @@
             <h3 class="col-sm-12">{{category_title}}</h3>
             <div class = 'col-md-12'>
             {% for cat in cats %}
-            <a class =" btn btn-warning {% if sc_cat_id == cat.id %} active {% endif %}"
+            <a class =" btn btn-warning TMBTNS {% if sc_cat_id == cat.id %} active {% endif %}"
             href = "?route=extension/module/scheme&sc_cat_id={{cat.id}}&engine={{engine}}"> {{cat.name}}</a>     
             {% endfor %}
             </div>
@@ -53,7 +53,7 @@
         <input name="x-coord[]" type="hidden" value="{{point.x}}">
         <input name="y-coord[]" type="hidden" value="{{point.y}}">
         <td><input name="desc[]" type="hidden" value = "{{point.desc}}">{{point.desc}}</td>
-        <td width="15%"><a target="_blank" href = "{{product_link}}&filter={{point.filter}}">{{text_link}}</a>
+        <td class="BTNtabs"><a target="_blank" href = "{{product_link}}&filter={{point.filter}}">{{text_link}}</a>
         </td>
     </tr>
     {% endfor %}
@@ -76,7 +76,7 @@
       </div>
       <div class="row">
       <div class="container"> {% for product in products %}
-        <div class="product-layout col-lg-4 col-md-4 col-sm-6 col-xs-12"> 
+        <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12"> 
           <div class="product-thumb transition">
           <div class="productBox">
             <div class="image"><a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-responsive" /></a></div>

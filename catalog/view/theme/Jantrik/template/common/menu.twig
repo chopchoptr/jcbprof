@@ -11,9 +11,8 @@
           <a href="{{ home }}"><img class="logoAd" src="catalog/view/theme/Jantrik/jantrik/img/logo/logo.png" alt="logo-image"></a>
         
       </div>
-      <div class="col-md-6 col-sm-8">
+      <div class="col-md-6 col-sm-8 text-center">
       <div class="collapse navbar-collapse navbar-ex1-collapse menucvet ">
-      <div class="contactinfo">
         <ul class="nav navbar-nav">
           <li><a href="{{ home }}" class="menu__item">Главная</a></li>
          {% for category in categories %}
@@ -33,13 +32,11 @@
         <li class = "menu__item"><a href="{{ category.href }}">{{ category.name }}</a></li>
         {% endif %}
         {% endfor %}
-          <li><a href="/about_us" class="menu__item">О нас</a></li>
+          <li><a href="/about_us" class="menu__item">О компании</a></li>
           <li><a href="/index.php?route=extension/module/manudesc" class="menu__item">Поставщики</a></li>
-          <li><a href="/delivery" class="menu__item">Доставка и оплата</a></li>
           
 
         </ul>
-      </div>
       </div>
       </div>
       <div class="col-md-3 col-sm-12 mh40">
