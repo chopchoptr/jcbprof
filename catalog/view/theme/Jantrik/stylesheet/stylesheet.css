@@ -350,7 +350,7 @@ footer h5 {
 }
 /* breadcrumb */
 .breadcrumb {
-	margin: 0 0 20px 0;
+    margin-top: 20px;
 	padding: 8px 0;
 	border: 1px solid #ddd;
 }
@@ -363,10 +363,7 @@ footer h5 {
 	position: relative;
 	white-space: nowrap;
 }
-.breadcrumb > li + li:before {
-	content: '';
-	padding: 0;
-}
+
 .breadcrumb > li:after {
 	content: '';
 	display: block;
@@ -693,11 +690,6 @@ h2.price {
     border-top: 1px solid black!important;
 }
 
-@media (max-width: 767px) {
-	.product-thumb .button-group button, .product-thumb .button-group button + button {
-		width: 33.33%;
-	}
-}
 .thumbnails {
 	overflow: auto;
 	clear: both;
@@ -5146,4 +5138,17 @@ legend {
 
 .TMBTNS{
     margin-bottom: 5px!important;
+}
+
+@media (max-width: 767px) {
+	.product-thumb {
+		max-width: 400px;
+    }
+    .product-thumb{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 470px){
+
 }
