@@ -78,6 +78,7 @@ function getMousePosition(canvas, event, ctx)
     } 
     activate_point(min_index - 1);
     table.rows[min_index].classList.add("active-line");
+    $(".active-line").scrollTop(60);
 } 
 
 function read_list()
@@ -109,11 +110,3 @@ function write_elements(ctx)
 } 
 
 canv.addEventListener("mousedown", function(e){getMousePosition(canv, e, ctx);}); 
-
-$(document).ready(function (){
-    $("#canv-1").click(function (){
-        $('html, body').animate({
-            scrollTop: $(".active-line").offset().top
-        }, 1000,);
-    });
-});

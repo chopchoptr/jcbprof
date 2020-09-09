@@ -5179,3 +5179,11 @@ legend {
 .swiper-slide{
     height: 500px!important;
 }
+
+.btn-block1{
+    width: 200px;
+}
+
+.hoverfixed :hover{
+    color: black!important;
+}
