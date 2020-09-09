@@ -5094,19 +5094,24 @@ legend {
     color: black!important;
 }
 
-#column-left{
+/* #column-left{
     width: 280px;
-}
+    position: absolute;
+} */
+
+/* #common-home{
+    /* margin-left: 300px; 
+} */
 
 
-@media (max-width: 1660px){
+/* @media (max-width: 1660px){
     #column-left{
         display: none!important;
     }
     #common-home{
         margin-left: 0px;
     }
-}
+} */
 
 .margintop_SCHEME td{
     height: 34px;
