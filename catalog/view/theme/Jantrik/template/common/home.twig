@@ -1,7 +1,8 @@
 {{ header }}
-{{ column_left }}
-<div id="common-home" class="container">
+
+<div id="common-home" class="container-fluid">
     <div class="row">
+    {{ column_left }}
         {% if column_left and column_right %}
         {% set class = 'col-sm-12' %}
         {% elseif column_left or column_right %}

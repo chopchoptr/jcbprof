@@ -65,6 +65,9 @@
                     <td class="text-left">{{ entry_link }}</td>
                     <td class="text-center">{{ entry_image }}</td>
                     <td class="text-right">{{ entry_sort_order }}</td>
+                    <td class="text-center">{{ entry_mytitle }}</td>
+                    <td class="text-center">{{ entry_mytext }}</td>
+                    <td class="text-center">{{ entry_mylink }}</td>
                     <td></td>
                   </tr>
                 </thead>
@@ -76,9 +79,12 @@
                       {% if error_banner_image[language.language_id][image_row] %}
                       <div class="text-danger">{{ error_banner_image[language.language_id][image_row] }}</div>
                       {% endif %}</td>
-                    <td class="text-left" style="width: 30%;"><input type="text" name="banner_image[{{ language.language_id }}][{{ image_row }}][link]" value="{{ banner_image.link }}" placeholder="{{ entry_link }}" class="form-control" /></td>
+                    <td class="text-left"><input type="text" name="banner_image[{{ language.language_id }}][{{ image_row }}][link]" value="{{ banner_image.link }}" placeholder="{{ entry_link }}" class="form-control" /></td>
                     <td class="text-center"><a href="" id="thumb-image{{ image_row }}" data-toggle="image" class="img-thumbnail"><img src="{{ banner_image.thumb }}" alt="" title="" data-placeholder="{{ placeholder }}" /></a>
                       <input type="hidden" name="banner_image[{{ language.language_id }}][{{ image_row }}][image]" value="{{ banner_image.image }}" id="input-image{{ image_row }}" /></td>
+                      <td class="text-center"><input type="text" name="banner_image[{{ language.language_id }}][{{ image_row }}][mytitle]" value="{{ banner_image.mytitle }}" placeholder="{{ entry_mytitle }}" class="form-control" /></td>                 
+<td class="text-center"><input type="text" name="banner_image[{{ language.language_id }}][{{ image_row }}][mytext]" value="{{ banner_image.mytext }}" placeholder="{{ entry_mytext }}" class="form-control" /></td>
+<td class="text-center"><input type="text" name="banner_image[{{ language.language_id }}][{{ image_row }}][mylink]" value="{{ banner_image.mylink }}" placeholder="{{ entry_mylink }}" class="form-control" /></td>
                     <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[{{ language.language_id }}][{{ image_row }}][sort_order]" value="{{ banner_image.sort_order }}" placeholder="{{ entry_sort_order }}" class="form-control" /></td>
                     <td class="text-left"><button type="button" onclick="$('#image-row{{ image_row }}, .tooltip').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>
                   </tr>
@@ -88,7 +94,7 @@
                 </tbody>
                 <tfoot>
                   <tr>
-                    <td colspan="4"></td>
+                    <td colspan="7"></td>
                     <td class="text-left"><button type="button" onclick="addImage('{{ language.language_id }}');" data-toggle="tooltip" title="{{ button_banner_add }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i></button></td>
                   </tr>
                 </tfoot>
@@ -106,8 +112,11 @@ var image_row = {{ image_row }};
 function addImage(language_id) {
 	html  = '<tr id="image-row' + image_row + '">';
     html += '  <td class="text-left"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][title]" value="" placeholder="{{ entry_title }}" class="form-control" /></td>';	
-	html += '  <td class="text-left" style="width: 30%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link]" value="" placeholder="{{ entry_link }}" class="form-control" /></td>';	
+	html += '  <td class="text-left"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][link]" value="" placeholder="{{ entry_link }}" class="form-control" /></td>';	
 	html += '  <td class="text-center"><a href="" id="thumb-image' + image_row + '" data-toggle="image" class="img-thumbnail"><img src="{{ placeholder }}" alt="" title="" data-placeholder="{{ placeholder }}" /></a><input type="hidden" name="banner_image[' + language_id + '][' + image_row + '][image]" value="" id="input-image' + image_row + '" /></td>';
+  html += '  <td class="text-center"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][mytitle]" value="" placeholder="{{ entry_mytitle }}" class="form-control" /></td>';
+  html += '  <td class="text-center"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][mytext]" value="" placeholder="{{ entry_mytext }}" class="form-control" /></td>';
+  html += '  <td class="text-center"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][mylink]" value="" placeholder="{{ entry_mylink }}" class="form-control" /></td>';
 	html += '  <td class="text-right" style="width: 10%;"><input type="text" name="banner_image[' + language_id + '][' + image_row + '][sort_order]" value="" placeholder="{{ entry_sort_order }}" class="form-control" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#image-row' + image_row  + ', .tooltip\').remove();" data-toggle="tooltip" title="{{ button_remove }}" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';

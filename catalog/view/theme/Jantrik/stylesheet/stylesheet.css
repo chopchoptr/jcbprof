@@ -5096,12 +5096,8 @@ legend {
 
 #column-left{
     width: 280px;
-    position: absolute;
 }
 
-#common-home{
-    margin-left: 300px;
-}
 
 @media (max-width: 1660px){
     #column-left{
@@ -5164,4 +5160,8 @@ legend {
 .img-responsive1{
     height: 500px;
     width: 200px;
+}
+
+.swiper-slide{
+    height: 500px!important;
 }

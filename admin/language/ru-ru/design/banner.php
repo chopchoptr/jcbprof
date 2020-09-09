@@ -19,6 +19,9 @@ $_['entry_name']        = 'Название баннера';
 $_['entry_title']       = 'Заголовок';
 $_['entry_link']        = 'Ссылка';
 $_['entry_image']       = 'Изображение';
+$_['entry_mytitle']     = 'Текстовый заголовок';
+$_['entry_mytext']      = 'Текст';
+$_['entry_mylink']      = 'Ссылка кнопки';
 $_['entry_status']      = 'Статус';
 $_['entry_sort_order']  = 'Порядок сортировки';
 

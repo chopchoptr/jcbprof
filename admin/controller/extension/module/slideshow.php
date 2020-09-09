@@ -152,3 +152,4 @@ class ControllerExtensionModuleSlideshow extends Controller {
 		return !$this->error;
 	}
 }
+    
