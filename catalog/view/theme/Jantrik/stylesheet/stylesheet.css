@@ -5152,3 +5152,16 @@ legend {
 @media (max-width: 470px){
 
 }
+
+.CartBoxFixed :hover{
+    color: black!important;
+}
+
+.CartBoxFixed > li > span {
+    display: inline-block;
+}
+
+.img-responsive1{
+    height: 500px;
+    width: 200px;
+}
