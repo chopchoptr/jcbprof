@@ -5,23 +5,17 @@
     </div>
     {%endif%}
     <div class="col-sm-12 BlockCenterCallBack">
-    <div class="callbackform">
-    <h1><span class="bottomline">{{ text_test }}</span></h1>
-    <form method = "POST">
-    <input type = "hidden" name = "product_id" value = "{{product_id}}">
-
-        <label><input type = "text"  placeholder = "Имя*" name = "consumer_name"></label>
-        <label><input type="email" placeholder = "Почта" name = "consumer_mail"></label>
-
-
-        <label><input type = "tel" placeholder = "Номер телефона*" name = "consumer_tel"></label>
-        <label><input placeholder = "Vin-номер авто" name = "consumer_vin"></label>
-
-
-        <textarea placeholder = "Опишите подробнее ваш вопрос" name = "consumer_text"></textarea>
-        <button name = "action" value = "send_callback" >Кнопка отправки формы и обновления БД</button>
-
-    </div>
-    </form>
-    </div>
+        <div class="callbackform">
+            <h1><span class="bottomline">{{ text_test }}</span></h1>
+            <form method = "POST">
+                <input type = "hidden" name = "product_id" value = "{{product_id}}">
+                <label><input type = "text"  placeholder = "Имя*" name = "consumer_name"></label>
+                <label><input type="email" placeholder = "Почта" name = "consumer_mail"></label>
+                <label><input type = "tel" placeholder = "Номер телефона*" name = "consumer_tel"></label>
+                <label><input placeholder = "Vin-номер авто" name = "consumer_vin"></label>
+                <textarea placeholder = "Опишите подробнее ваш вопрос" name = "consumer_text"></textarea>
+                <button name = "action" value = "send_callback" >Кнопка отправки формы и обновления БД</button>
+            </form>
+        </div>
+    
     </div>

@@ -1,13 +1,13 @@
 {{ header }}
-{{ column_left }}
-<div id="common-home" class="container">
+<div id="common-home" class="container-fluid">
     <div class="row">
+     {{ column_left }}
         {% if column_left and column_right %}
-        {% set class = 'col-sm-12' %}
+        {% set class = 'col-sm-12 col-xs-12 col-md-12 col-lg-8 col-xl-8' %}
         {% elseif column_left or column_right %}
-        {% set class = 'col-sm-12' %}
+        {% set class = 'col-sm-12 col-xs-12 col-md-12 col-lg-10 col-xl-10' %}
         {% else %}
-        {% set class = 'col-sm-12' %}
+        {% set class = 'col-sm-12 col-xs-12 col-md-12 col-lg-10 col-xl-10' %}
         {% endif %}
         <div id="content" class="{{ class }}">{{ content_top }}{{ content_bottom }}</div>
         {{ column_right }}
