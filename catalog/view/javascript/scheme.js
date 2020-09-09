@@ -109,3 +109,11 @@ function write_elements(ctx)
 } 
 
 canv.addEventListener("mousedown", function(e){getMousePosition(canv, e, ctx);}); 
+
+$(document).ready(function (){
+    $("#canv-1").click(function (){
+        $('html, body').animate({
+            scrollTop: $(".active-line").offset().top
+        }, 1000,);
+    });
+});
