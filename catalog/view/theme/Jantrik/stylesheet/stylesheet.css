@@ -5002,6 +5002,11 @@ legend {
     min-height: 300px!important;
 }
 
+.widthart > img
+{
+    max-height:250px;
+}
+
 .active-line
 {
     color:red;
@@ -5012,7 +5017,11 @@ legend {
     margin-top: 10px;
     text-align: center;
 }
-
+.scheme_page_block:hover
+{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); 
+    background: rgb(245, 245, 247);
+}
 .margintop_SCHEME{
     margin-top: 30px!important;
     margin-bottom: 30px;
