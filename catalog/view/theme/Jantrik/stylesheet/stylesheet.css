@@ -145,8 +145,8 @@ div.required .control-label:before {
 
 #search .input-lg {
 	height: 40px;
-	line-height: 20px;
-	padding: 0 10px;
+    line-height: 20px;
+    padding: 0px!important;
 }
 #search .btn-lg {
     height: 40px;
@@ -5159,9 +5159,7 @@ legend {
     }
 }
 
-@media (max-width: 470px){
 
-}
 
 .CartBoxFixed :hover{
     color: black!important;
@@ -5187,3 +5185,27 @@ legend {
 .hoverfixed :hover{
     color: black!important;
 }
+
+.text-slider{
+    max-width: 96%;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-size: 26px;
+    color:  #fff; 
+    padding: 17px;
+    background-color: #0000006e;
+    overflow-x: hidden!important;
+}
+
+@media (max-width: 1024px){
+    .swiper-viewport{
+        display: none;
+    }
+}
+
+.btn-default{
+    height: 46px!important;
+}
+
+.lifeform{}

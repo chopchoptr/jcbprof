@@ -6,7 +6,6 @@
 {% include template('partial/d_breadcrumb') %}
 
     {% include template('partial/d_layout_open') %}
-
         <article class="bm">
             <div class="heading bm-post-info clearfix">
                 {% if edit %}<div class="btn-group btn-group-xs btn-edit" ><a class="btn btn-default " href="{{edit}}" target="_blank"><i class="fa fa-pencil"></i> {{text_edit}}</a></div>{% endif %}
@@ -138,7 +137,7 @@
             $('.popup').magnificPopup({
                 type:'image',
                 gallery: {
-                    enabled:true
+                    enabled:false
                 }
             });
         })
