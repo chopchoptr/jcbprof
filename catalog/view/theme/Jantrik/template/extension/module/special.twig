@@ -3,7 +3,7 @@
 <div class="swiper-viewport">
   <div id="carousel{{ module }}" class="swiper-container">
     <div class="swiper-wrapper">{% for product in products %}
-      <div class="swiper-slide text-center">{% if product.href %}<a href="{{ product.href }}"><img src="{{ product.thumb }}" alt="{{ product.name }}" class="img-responsive1" /><p class="price"> {% if not product.special %}
+      <div class="swiper-slide text-center">{% if product.href %}<a href="{{ product.href }}"><img class="Wid100" src="{{ product.thumb }}" alt="{{ product.name }}" class="img-responsive1" /><p class="price"> {% if not product.special %}
           {{ product.price }}
           {% else %} <span class="price-new">{{ product.special }}</span> <span class="price-old">{{ product.price }}</span> {% endif %}
           {% if product.tax %} <span class="price-tax">{{ text_tax }} {{ product.tax }}</span> {% endif %} 

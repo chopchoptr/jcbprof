@@ -5172,6 +5172,7 @@ legend {
 .img-responsive1{
     height: 500px;
     width: 200px;
+    margin: 0 auto;
 }
 
 .swiper-slide{
@@ -5202,10 +5203,6 @@ legend {
     .swiper-viewport{
         display: none;
     }
-}
-
-.btn-default{
-    height: 46px!important;
 }
 
 .colorTEL{
