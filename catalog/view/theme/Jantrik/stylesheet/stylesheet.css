@@ -4823,7 +4823,6 @@ legend {
 	border: none !important;
     margin-top: 100px;
 }
-
 .callbackform{
     height: 450px;
     max-width: 400px;
@@ -5170,9 +5169,8 @@ legend {
 }
 
 .img-responsive1{
-    height: 500px;
-    width: 200px;
-    margin: 0 auto;
+    height: 100%;
+    width: 100%;
 }
 
 .swiper-slide{
